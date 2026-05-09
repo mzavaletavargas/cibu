@@ -7,10 +7,11 @@ import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
 import logoElsevier from "@/assets/sponsors/elsevier.avif";
 import logoCbp from "@/assets/sponsors/cbp.png";
-import logoSociologos from "@/assets/sponsors/sociologos.avif";
+import logoSociologos from "@/assets/sponsors/sociologos.png";
 import logoBmj from "@/assets/sponsors/bmj.png";
 import logoPanamericana from "@/assets/sponsors/panamericana.png";
 import logoEscuela from "@/assets/sponsors/escuela-biblio.png";
+import logoLocaly from "@/assets/sponsors/localy.svg";
 import {
   Sparkles, Network, Shield, GraduationCap, Archive,
   Calendar, MapPin, Users, FileText, ArrowRight, Check, Mail
