@@ -3,6 +3,14 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import heroImg from "@/assets/hero-cibu.jpg";
+import logoLibun from "@/assets/sponsors/libun.png";
+import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
+import logoElsevier from "@/assets/sponsors/elsevier.avif";
+import logoCbp from "@/assets/sponsors/cbp.png";
+import logoSociologos from "@/assets/sponsors/sociologos.avif";
+import logoBmj from "@/assets/sponsors/bmj.png";
+import logoPanamericana from "@/assets/sponsors/panamericana.png";
+import logoEscuela from "@/assets/sponsors/escuela-biblio.png";
 import {
   Sparkles, Network, Shield, GraduationCap, Archive,
   Calendar, MapPin, Users, FileText, ArrowRight, Check, Mail
@@ -35,9 +43,14 @@ const fechas = [
 ];
 
 const sponsors = [
-  "LIBUN Editorial", "McGraw Hill", "Elsevier",
-  "Colegio de Bibliotecólogos del Perú", "Colegio de Sociólogos del Perú",
-  "BMJ Journal", "Editorial Panamericana", "Escuela de Bibliotecólogos",
+  { name: "LIBUN Editorial", logo: logoLibun, dark: false },
+  { name: "McGraw Hill", logo: logoMcGraw, dark: false },
+  { name: "Elsevier", logo: logoElsevier, dark: false },
+  { name: "Colegio de Bibliotecólogos del Perú", logo: logoCbp, dark: false },
+  { name: "Colegio de Sociólogos del Perú", logo: logoSociologos, dark: false },
+  { name: "BMJ Journals", logo: logoBmj, dark: false },
+  { name: "Editorial Panamericana", logo: logoPanamericana, dark: false },
+  { name: "Escuela de Bibliotecólogos", logo: logoEscuela, dark: true },
 ];
 
 function Index() {
@@ -205,9 +218,11 @@ function Index() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {sponsors.map((s) => (
-              <div key={s} className="bg-card border border-border rounded-xl px-6 py-8 text-center hover:border-[var(--gold)] transition">
-                <Check className="w-5 h-5 mx-auto mb-3 text-[var(--gold)]" />
-                <div className="font-display font-semibold text-sm">{s}</div>
+              <div
+                key={s.name}
+                className={`border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-[var(--deep)]" : "bg-card"}`}
+              >
+                <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />
               </div>
             ))}
           </div>
