@@ -1,26 +1,236 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { WhatsAppFAB } from "@/components/WhatsAppFAB";
+import heroImg from "@/assets/hero-cibu.jpg";
+import {
+  Sparkles, Network, Shield, GraduationCap, Archive,
+  Calendar, MapPin, Users, FileText, ArrowRight, Check, Mail
+} from "lucide-react";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "VIII CIBU 2026 — Bibliotecas e IA · Trujillo, Perú" },
+      { name: "description", content: "VIII Congreso Internacional de Bibliotecas Universitarias. Del 13 al 16 de julio de 2026 en la Universidad Privada Antenor Orrego, Trujillo, Perú." },
+      { property: "og:title", content: "VIII CIBU 2026 — Bibliotecas e IA" },
+      { property: "og:description", content: "Construyendo futuros posibles: del acceso al conocimiento a la preservación de la memoria cultural." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+const ejes = [
+  { icon: Sparkles, title: "Bibliotecas inteligentes", desc: "Servicios y colecciones potenciados por IA." },
+  { icon: Network, title: "Conocimiento en red", desc: "Colaboración y ciencia abierta en la era digital." },
+  { icon: Shield, title: "Ética y confianza", desc: "Desafíos humanos frente a la inteligencia artificial." },
+  { icon: GraduationCap, title: "Nuevas alfabetizaciones", desc: "Aprender y enseñar con apoyo de la IA." },
+  { icon: Archive, title: "Preservar la memoria", desc: "Patrimonio cultural y digital en tiempos de cambio." },
+];
+
+const fechas = [
+  { label: "Envío de resúmenes", date: "30 / 05 / 2026" },
+  { label: "Notificación de aprobación", date: "15 / 06 / 2026" },
+  { label: "Envío de presentación final (PPT)", date: "30 / 06 / 2026" },
+];
+
+const sponsors = [
+  "LIBUN Editorial", "McGraw Hill", "Elsevier",
+  "Colegio de Bibliotecólogos del Perú", "Colegio de Sociólogos del Perú",
+  "BMJ Journal", "Editorial Panamericana", "Escuela de Bibliotecólogos",
+];
 
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <SiteHeader />
+
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImg} alt="" width={1920} height={1080} className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.15 0.05 260 / 0.92), oklch(0.18 0.06 270 / 0.78))" }} />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-32 md:pt-32 md:pb-40 text-white">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 backdrop-blur text-xs uppercase tracking-widest mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" /> 13–16 julio · Trujillo, Perú
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl leading-[1.05] max-w-4xl">
+            Bibliotecas e <span className="italic" style={{ color: "var(--gold)" }}>IA</span>:
+            <br /> construyendo futuros posibles.
+          </h1>
+          <p className="mt-6 text-lg md:text-xl max-w-2xl text-white/80 leading-relaxed">
+            VIII Congreso Internacional de Bibliotecas Universitarias.
+            Del acceso al conocimiento a la preservación de la memoria cultural.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              to="/registro"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
+              style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+            >
+              Inscribirme al congreso <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a href="#convocatoria" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition">
+              Convocatoria de trabajos
+            </a>
+          </div>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+            {[
+              { icon: Calendar, k: "4 días", v: "de congreso" },
+              { icon: MapPin, k: "UPAO", v: "Trujillo, Perú" },
+              { icon: Users, k: "Internacional", v: "Latam + España" },
+              { icon: FileText, k: "5 ejes", v: "temáticos" },
+            ].map((s, i) => (
+              <div key={i} className="border-l border-white/20 pl-4">
+                <s.icon className="w-5 h-5 mb-2" style={{ color: "var(--gold)" }} />
+                <div className="font-display text-2xl">{s.k}</div>
+                <div className="text-xs uppercase tracking-wider text-white/60">{s.v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOBRE */}
+      <section id="sobre" className="max-w-6xl mx-auto px-6 py-24">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">El Congreso</div>
+            <h2 className="font-display text-4xl md:text-5xl mb-6">Un encuentro global sobre el futuro de las bibliotecas.</h2>
+          </div>
+          <div className="space-y-5 text-muted-foreground leading-relaxed">
+            <p>
+              Del 13 al 16 de julio de 2026, la <strong className="text-foreground">Universidad Privada Antenor Orrego de Trujillo (Perú)</strong> albergará el VIII CIBU, con el lema:
+              <em> «Bibliotecas e IA: construyendo futuros posibles»</em>.
+            </p>
+            <p>
+              Contará con la participación de conferencistas de Latinoamérica y España, quienes expondrán los últimos avances en gestión de bibliotecas, del conocimiento y de la información.
+            </p>
+            <p>
+              De forma paralela, una <strong className="text-foreground">feria tecnológica</strong> reunirá editoriales, expertos y empresas proveedoras líderes en software de gestión, equipos de última generación, libros electrónicos, bases de datos y servicios innovadores para bibliotecas, archivos y museos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* EJES */}
+      <section id="ejes" className="bg-secondary/40 py-24 border-y border-border">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Ejes temáticos</div>
+            <h2 className="font-display text-4xl md:text-5xl">Cinco caminos hacia el futuro.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ejes.map((e, i) => (
+              <div key={i} className="bg-card p-7 rounded-2xl border border-border hover:border-[var(--gold)] transition group" style={{ boxShadow: "0 4px 24px -12px oklch(0.18 0.05 260 / 0.15)" }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition" style={{ background: "var(--gradient-gold)" }}>
+                  <e.icon className="w-6 h-6 text-[var(--gold-foreground)]" />
+                </div>
+                <div className="text-xs font-bold text-[var(--gold)] mb-2">0{i + 1}</div>
+                <h3 className="font-display text-xl mb-2">{e.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONVOCATORIA */}
+      <section id="convocatoria" className="max-w-6xl mx-auto px-6 py-24">
+        <div className="grid md:grid-cols-5 gap-12">
+          <div className="md:col-span-2">
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Convocatoria</div>
+            <h2 className="font-display text-4xl mb-6">Presenta tu trabajo.</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Invitamos a profesionales e investigadores a presentar estudios y buenas prácticas, teóricos y prácticos. Para fomentar la participación global, se recibirá un número limitado de presentaciones <strong className="text-foreground">virtuales</strong>.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              La presentación presencial dispondrá de <strong className="text-foreground">20 minutos</strong> de exposición más ronda de preguntas. Los trabajos serán publicados en el sitio web del congreso y su repositorio.
+            </p>
+            <a href="mailto:cibu.bibliotecas@gmail.com" className="inline-flex items-center gap-2 text-foreground font-semibold border-b-2 border-[var(--gold)] pb-1 hover:opacity-80">
+              <Mail className="w-4 h-4" /> cibu.bibliotecas@gmail.com
+            </a>
+          </div>
+          <div className="md:col-span-3">
+            <div className="bg-card border border-border rounded-2xl p-8" style={{ boxShadow: "var(--shadow-elegant)" }}>
+              <h3 className="font-display text-2xl mb-6">Fechas clave</h3>
+              <div className="space-y-5">
+                {fechas.map((f, i) => (
+                  <div key={i} className="flex items-center justify-between gap-4 pb-5 border-b border-border last:border-0 last:pb-0">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-display font-bold text-[var(--deep)]">
+                        {i + 1}
+                      </div>
+                      <div className="font-medium">{f.label}</div>
+                    </div>
+                    <div className="font-display text-lg text-[var(--gold)] font-semibold whitespace-nowrap">{f.date}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HISTORIA */}
+      <section className="relative py-24 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+        <div className="max-w-4xl mx-auto px-6 text-center text-white">
+          <div className="text-xs uppercase tracking-[0.25em] font-semibold mb-4" style={{ color: "var(--gold)" }}>Historia</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-8">Desde 2011, conectando bibliotecas del mundo.</h2>
+          <p className="text-lg text-white/80 leading-relaxed">
+            El Congreso Internacional de Bibliotecas Universitarias nació en 2011 por iniciativa del <strong className="text-white">Ing. Humberto Ravest</strong> en la Universidad Técnica Federico Santa María (Chile), con el apoyo de la Pontificia Universidad Católica de Valparaíso y la Universidad Austral de Chile.
+          </p>
+          <p className="mt-4 text-lg text-white/80 leading-relaxed">
+            Lo que comenzó como una reunión de bibliotecas universitarias hoy es un evento de relevancia internacional, fiel a su objetivo: compartir experiencias y soluciones tecnológicas que ya están siendo probadas con éxito en la región.
+          </p>
+        </div>
+      </section>
+
+      {/* PONENTES placeholder */}
+      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+        <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Ponentes</div>
+        <h2 className="font-display text-4xl md:text-5xl mb-4">Pronto anunciaremos los expositores.</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Conferencistas de Latinoamérica y España compartirán los últimos avances. Vuelve pronto para conocer el line-up completo.
+        </p>
+      </section>
+
+      {/* SPONSORS */}
+      <section id="sponsors" className="bg-secondary/40 py-20 border-t border-border">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Auspiciadores</div>
+            <h2 className="font-display text-4xl">Con el respaldo de.</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {sponsors.map((s) => (
+              <div key={s} className="bg-card border border-border rounded-xl px-6 py-8 text-center hover:border-[var(--gold)] transition">
+                <Check className="w-5 h-5 mx-auto mb-3 text-[var(--gold)]" />
+                <div className="font-display font-semibold text-sm">{s}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="max-w-5xl mx-auto px-6 py-24 text-center">
+        <h2 className="font-display text-4xl md:text-6xl mb-6">¿Listo para ser parte?</h2>
+        <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
+          Asegura tu lugar en el evento más importante de bibliotecas universitarias de la región.
+        </p>
+        <Link
+          to="/registro"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-[var(--gold-foreground)] text-lg hover:opacity-90 transition"
+          style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+        >
+          Inscribirme ahora <ArrowRight className="w-5 h-5" />
+        </Link>
+      </section>
+
+      <SiteFooter />
+      <WhatsAppFAB />
+    </div>
+  );
 }
