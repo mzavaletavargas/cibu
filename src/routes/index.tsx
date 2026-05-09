@@ -218,9 +218,11 @@ function Index() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {sponsors.map((s) => (
-              <div key={s} className="bg-card border border-border rounded-xl px-6 py-8 text-center hover:border-[var(--gold)] transition">
-                <Check className="w-5 h-5 mx-auto mb-3 text-[var(--gold)]" />
-                <div className="font-display font-semibold text-sm">{s}</div>
+              <div
+                key={s.name}
+                className={`border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-[var(--deep)]" : "bg-card"}`}
+              >
+                <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />
               </div>
             ))}
           </div>
