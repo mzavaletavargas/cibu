@@ -7,10 +7,11 @@ import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
 import logoElsevier from "@/assets/sponsors/elsevier.avif";
 import logoCbp from "@/assets/sponsors/cbp.png";
-import logoSociologos from "@/assets/sponsors/sociologos.avif";
+import logoSociologos from "@/assets/sponsors/sociologos.png";
 import logoBmj from "@/assets/sponsors/bmj.png";
 import logoPanamericana from "@/assets/sponsors/panamericana.png";
 import logoEscuela from "@/assets/sponsors/escuela-biblio.png";
+import logoLocaly from "@/assets/sponsors/localy.svg";
 import {
   Sparkles, Network, Shield, GraduationCap, Archive,
   Calendar, MapPin, Users, FileText, ArrowRight, Check, Mail
@@ -51,6 +52,7 @@ const sponsors = [
   { name: "BMJ Journals", logo: logoBmj, dark: false },
   { name: "Editorial Panamericana", logo: logoPanamericana, dark: false },
   { name: "Escuela de Bibliotecólogos", logo: logoEscuela, dark: true },
+  { name: "Localy", logo: logoLocaly, dark: true, href: "https://www.localy.lat" },
 ];
 
 function Index() {
@@ -200,13 +202,24 @@ function Index() {
         </div>
       </section>
 
-      {/* PONENTES placeholder */}
-      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
-        <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Ponentes</div>
-        <h2 className="font-display text-4xl md:text-5xl mb-4">Pronto anunciaremos los expositores.</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Conferencistas de Latinoamérica y España compartirán los últimos avances. Vuelve pronto para conocer el line-up completo.
+      {/* EXPOSITORES */}
+      <section id="expositores" className="max-w-6xl mx-auto px-6 py-24 text-center">
+        <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Expositores</div>
+        <h2 className="font-display text-4xl md:text-5xl mb-4">Pronto se publicarán.</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-10">
+          Estamos confirmando a los conferencistas de Latinoamérica y España. Esta sección se actualizará pronto con el line-up completo.
         </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
+          {[0, 1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="aspect-square rounded-2xl border border-dashed border-border bg-secondary/30 flex flex-col items-center justify-center p-4"
+            >
+              <Users className="w-8 h-8 text-[var(--gold)] mb-3 opacity-70" />
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">Próximamente</div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* SPONSORS */}
@@ -217,14 +230,17 @@ function Index() {
             <h2 className="font-display text-4xl">Con el respaldo de.</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {sponsors.map((s) => (
-              <div
-                key={s.name}
-                className={`border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-[var(--deep)]" : "bg-card"}`}
-              >
-                <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />
-              </div>
-            ))}
+            {sponsors.map((s) => {
+              const cardClass = `border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-[var(--deep)]" : "bg-card"}`;
+              const inner = <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />;
+              return s.href ? (
+                <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className={cardClass} aria-label={s.name}>
+                  {inner}
+                </a>
+              ) : (
+                <div key={s.name} className={cardClass}>{inner}</div>
+              );
+            })}
           </div>
         </div>
       </section>

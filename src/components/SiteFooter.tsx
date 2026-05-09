@@ -13,7 +13,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="space-y-2 text-sm opacity-90">
-          <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Universidad Privada Antenor Orrego — Trujillo, Perú</div>
+          <div className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" /> <span>Universidad Privada Antenor Orrego, Av. América Sur 3145, Trujillo 13008</span></div>
           <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> cibu.bibliotecas@gmail.com</div>
           <div>13–16 de julio de 2026</div>
         </div>
