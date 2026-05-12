@@ -52,7 +52,7 @@ const sponsors = [
   { name: "BMJ Journals", logo: logoBmj, dark: false },
   { name: "Editorial Panamericana", logo: logoPanamericana, dark: false },
   { name: "Escuela de Bibliotecólogos", logo: logoEscuela, dark: true },
-  { name: "Localy", logo: logoLocaly, dark: true, href: "https://www.localy.lat" },
+  { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
 
 function Index() {
