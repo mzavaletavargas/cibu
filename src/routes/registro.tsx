@@ -46,7 +46,7 @@ function CopyField({ label, value }: { label: string; value: string }) {
 }
 
 function Registro() {
-  const formUrl = "https://forms.google.com/cibu-2026";
+  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfArpZlkD_54qhWp7CUUU9d5nXDQPtsTGeWDQUmMvueKfh3UA/viewform?usp=header";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
