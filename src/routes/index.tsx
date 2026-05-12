@@ -52,7 +52,7 @@ const sponsors = [
   { name: "BMJ Journals", logo: logoBmj, dark: false },
   { name: "Editorial Panamericana", logo: logoPanamericana, dark: false },
   { name: "Escuela de Bibliotecólogos", logo: logoEscuela, dark: true },
-  { name: "Localy", logo: logoLocaly, dark: true, href: "https://www.localy.lat" },
+  { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
 
 function Index() {
@@ -231,7 +231,7 @@ function Index() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {sponsors.map((s) => {
-              const cardClass = "border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] bg-white text-slate-900";
+              const cardClass = `border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`;
               const inner = <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />;
               return s.href ? (
                 <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className={cardClass} aria-label={s.name}>
