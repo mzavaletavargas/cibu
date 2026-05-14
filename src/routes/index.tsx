@@ -176,9 +176,19 @@ function Index() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               La presentación presencial dispondrá de <strong className="text-foreground">20 minutos</strong> de exposición más ronda de preguntas. Los trabajos serán publicados en el sitio web del congreso y su repositorio.
             </p>
-            <a href="mailto:cibu.bibliotecas@gmail.com" className="inline-flex items-center gap-2 text-foreground font-semibold border-b-2 border-[var(--gold)] pb-1 hover:opacity-80">
-              <Mail className="w-4 h-4" /> cibu.bibliotecas@gmail.com
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/formato-envio-trabajos.pdf"
+                download
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
+                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+              >
+                <FileText className="w-4 h-4" /> Descargar formato (PDF)
+              </a>
+              <a href="mailto:cibu.bibliotecas@gmail.com" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-semibold border border-border hover:bg-secondary transition">
+                <Mail className="w-4 h-4" /> Enviar trabajo
+              </a>
+            </div>
           </div>
           <div className="md:col-span-3">
             <div className="bg-card border border-border rounded-2xl p-8" style={{ boxShadow: "var(--shadow-elegant)" }}>
