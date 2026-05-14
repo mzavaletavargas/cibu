@@ -3,7 +3,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import heroImg from "@/assets/hero-cibu.jpg";
-import bannerImg from "@/assets/cibu-banner.png";
+const BANNER_BASE = "https://res.cloudinary.com/dtioir2dl/image/upload";
+const BANNER_ID = "v1778733837/cibu-banner_dxmjtd.png";
+const bannerSrc = `${BANNER_BASE}/f_auto,q_auto,w_1200,dpr_auto,c_limit/${BANNER_ID}`;
+const bannerSrcSet = [400, 800, 1200, 1600, 2000]
+  .map((w) => `${BANNER_BASE}/f_auto,q_auto,w_${w},c_limit/${BANNER_ID} ${w}w`)
+  .join(", ");
 import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
 import logoElsevier from "@/assets/sponsors/elsevier.avif";
@@ -112,10 +117,15 @@ function Index() {
       <section className="bg-white border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-10">
           <img
-            src={bannerImg}
+            src={bannerSrc}
+            srcSet={bannerSrcSet}
+            sizes="(max-width: 768px) 100vw, 1152px"
             alt="VIII Congreso Internacional de Bibliotecas Universitarias — Bibliotecas e IA: construyendo futuros posibles. 13 al 16 de julio de 2026, UPAO, Trujillo, Perú"
+            width={1600}
+            height={500}
             className="w-full h-auto object-contain"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </section>

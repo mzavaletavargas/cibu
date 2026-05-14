@@ -1,5 +1,6 @@
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/cibu-logo.png";
+
+const LOGO_URL = "https://res.cloudinary.com/dtioir2dl/image/upload/f_auto,q_auto,w_160,dpr_auto/v1778733901/cibu-logo_dfkk9f.png";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -8,7 +9,7 @@ export function SiteFooter() {
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="bg-white/95 inline-flex p-2 rounded-lg mb-4">
-            <img src={logo} alt="CIBU" className="h-12 w-auto object-contain" />
+            <img src={LOGO_URL} alt="CIBU" width={64} height={48} loading="lazy" decoding="async" className="h-12 w-auto object-contain" />
           </div>
           <h3 className="font-display text-2xl mb-3">VIII CIBU 2026</h3>
           <p className="text-sm opacity-80 leading-relaxed">
