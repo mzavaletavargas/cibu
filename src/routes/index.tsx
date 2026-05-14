@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import heroImg from "@/assets/hero-cibu.jpg";
+import bannerImg from "@/assets/cibu-banner.png";
 import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
 import logoElsevier from "@/assets/sponsors/elsevier.avif";
