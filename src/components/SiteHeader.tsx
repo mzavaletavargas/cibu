@@ -1,14 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen } from "lucide-react";
+import logo from "@/assets/cibu-logo.png";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "var(--gradient-gold)" }}>
-            <BookOpen className="w-5 h-5 text-[var(--gold-foreground)]" />
-          </div>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={logo} alt="CIBU" className="h-10 w-auto object-contain" />
           <div className="leading-tight">
             <div className="font-display font-bold text-foreground">VIII CIBU</div>
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground">2026 · Trujillo</div>
