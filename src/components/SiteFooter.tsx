@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/cibu-logo.png";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -6,6 +7,9 @@ export function SiteFooter() {
     <footer className="bg-[var(--deep)] text-[var(--primary-foreground)] mt-24">
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
+          <div className="bg-white/95 inline-flex p-2 rounded-lg mb-4">
+            <img src={logo} alt="CIBU" className="h-12 w-auto object-contain" />
+          </div>
           <h3 className="font-display text-2xl mb-3">VIII CIBU 2026</h3>
           <p className="text-sm opacity-80 leading-relaxed">
             Congreso Internacional de Bibliotecas Universitarias.
