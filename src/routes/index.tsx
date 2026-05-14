@@ -120,6 +120,28 @@ function Index() {
         </div>
       </section>
 
+      {/* VIDEO */}
+      <section id="video" className="bg-secondary/40 border-y border-border py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Video</div>
+            <h2 className="font-display text-4xl md:text-5xl">Conoce el VIII CIBU 2026.</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              Mira el video oficial de invitación al congreso.
+            </p>
+          </div>
+          <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-black" style={{ aspectRatio: "16 / 9", boxShadow: "var(--shadow-elegant)" }}>
+            <iframe
+              src="https://drive.google.com/file/d/1-pmbYq9E7438YAzSl-dHAGVM_etRzarx/preview"
+              title="Video oficial VIII CIBU 2026"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* SOBRE */}
       <section id="sobre" className="max-w-6xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-12 items-start">
