@@ -108,6 +108,18 @@ function Index() {
         </div>
       </section>
 
+      {/* BANNER */}
+      <section className="bg-white border-b border-border">
+        <div className="max-w-6xl mx-auto px-6 py-10">
+          <img
+            src={bannerImg}
+            alt="VIII Congreso Internacional de Bibliotecas Universitarias — Bibliotecas e IA: construyendo futuros posibles. 13 al 16 de julio de 2026, UPAO, Trujillo, Perú"
+            className="w-full h-auto object-contain"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* SOBRE */}
       <section id="sobre" className="max-w-6xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-12 items-start">
