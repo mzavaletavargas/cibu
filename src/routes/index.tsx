@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import heroImg from "@/assets/hero-cibu.jpg";
+import bannerImg from "@/assets/cibu-banner.png";
 import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
 import logoElsevier from "@/assets/sponsors/elsevier.avif";
@@ -104,6 +105,18 @@ function Index() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* BANNER */}
+      <section className="bg-white border-b border-border">
+        <div className="max-w-6xl mx-auto px-6 py-10">
+          <img
+            src={bannerImg}
+            alt="VIII Congreso Internacional de Bibliotecas Universitarias — Bibliotecas e IA: construyendo futuros posibles. 13 al 16 de julio de 2026, UPAO, Trujillo, Perú"
+            className="w-full h-auto object-contain"
+            loading="lazy"
+          />
         </div>
       </section>
 
