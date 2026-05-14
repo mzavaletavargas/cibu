@@ -176,9 +176,19 @@ function Index() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               La presentación presencial dispondrá de <strong className="text-foreground">20 minutos</strong> de exposición más ronda de preguntas. Los trabajos serán publicados en el sitio web del congreso y su repositorio.
             </p>
-            <a href="mailto:cibu.bibliotecas@gmail.com" className="inline-flex items-center gap-2 text-foreground font-semibold border-b-2 border-[var(--gold)] pb-1 hover:opacity-80">
-              <Mail className="w-4 h-4" /> cibu.bibliotecas@gmail.com
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/formato-envio-trabajos.pdf"
+                download
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
+                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+              >
+                <FileText className="w-4 h-4" /> Descargar formato (PDF)
+              </a>
+              <a href="mailto:cibu.bibliotecas@gmail.com" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-semibold border border-border hover:bg-secondary transition">
+                <Mail className="w-4 h-4" /> Enviar trabajo
+              </a>
+            </div>
           </div>
           <div className="md:col-span-3">
             <div className="bg-card border border-border rounded-2xl p-8" style={{ boxShadow: "var(--shadow-elegant)" }}>
@@ -198,6 +208,44 @@ function Index() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* FORMATO DEL TRABAJO */}
+        <div className="mt-16 bg-card border border-border rounded-2xl p-8 md:p-10" style={{ boxShadow: "var(--shadow-elegant)" }}>
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-2">Formato</div>
+              <h3 className="font-display text-3xl">Estructura para el envío de trabajos</h3>
+            </div>
+            <a
+              href="/formato-envio-trabajos.pdf"
+              download
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold border border-[var(--gold)] text-[var(--deep)] hover:bg-[var(--gold)] hover:text-[var(--gold-foreground)] transition"
+            >
+              <FileText className="w-4 h-4" /> Descargar PDF
+            </a>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              { k: "Título", v: "En español e inglés." },
+              { k: "Autor o autores", v: "Nombres completos de quienes presentan el trabajo." },
+              { k: "Institución", v: "Filiación institucional de los autores." },
+              { k: "Eje temático", v: "Indicar uno de los cinco ejes del congreso." },
+              { k: "Resumen", v: "Síntesis del trabajo, objetivos, metodología y aportes." },
+              { k: "Autorización de publicación", v: "Permiso para publicar el trabajo en los sitios web y repositorio del CIBU 2026." },
+            ].map((f, i) => (
+              <div key={i} className="flex gap-4 p-5 rounded-xl bg-secondary/40 border border-border">
+                <div className="w-8 h-8 shrink-0 rounded-full bg-[var(--gold)] text-[var(--gold-foreground)] flex items-center justify-center text-sm font-bold">{i + 1}</div>
+                <div>
+                  <div className="font-semibold mb-1">{f.k}</div>
+                  <div className="text-sm text-muted-foreground leading-relaxed">{f.v}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Envía tu trabajo siguiendo este formato al correo <a className="text-foreground font-semibold border-b border-[var(--gold)]" href="mailto:cibu.bibliotecas@gmail.com">cibu.bibliotecas@gmail.com</a>.
+          </p>
         </div>
       </section>
 
