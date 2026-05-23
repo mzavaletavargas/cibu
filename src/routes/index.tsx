@@ -26,47 +26,8 @@ import {
   Calendar, MapPin, Users, FileText, ArrowRight, Check, Mail
 } from "lucide-react";
 
+// SEO meta + JSON-LD live in index.html so static crawlers see them without executing JS.
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "VIII CIBU 2026 — Bibliotecas e IA · Trujillo, Perú" },
-      { name: "description", content: "VIII Congreso Internacional de Bibliotecas Universitarias. Del 13 al 16 de julio de 2026 en la Universidad Privada Antenor Orrego, Trujillo, Perú." },
-      { property: "og:title", content: "VIII CIBU 2026 — Bibliotecas e IA" },
-      { property: "og:description", content: "Construyendo futuros posibles: del acceso al conocimiento a la preservación de la memoria cultural." },
-      { property: "og:url", content: "https://cibu.lovable.app/" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://cibu.lovable.app/" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Event",
-          name: "VIII Congreso Internacional de Bibliotecas Universitarias",
-          startDate: "2026-07-13",
-          endDate: "2026-07-16",
-          eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
-          eventStatus: "https://schema.org/EventScheduled",
-          location: {
-            "@type": "Place",
-            name: "Universidad Privada Antenor Orrego",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Av. América Sur 3145",
-              addressLocality: "Trujillo",
-              postalCode: "13008",
-              addressCountry: "PE",
-            },
-          },
-          description: "VIII Congreso Internacional de Bibliotecas Universitarias — Bibliotecas e IA: construyendo futuros posibles.",
-          url: "https://cibu.lovable.app/",
-          organizer: { "@type": "Organization", name: "CIBU" },
-        }),
-      },
-    ],
-  }),
   component: Index,
 });
 

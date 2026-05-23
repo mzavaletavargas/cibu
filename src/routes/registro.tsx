@@ -6,21 +6,9 @@ import {
   Check, Smartphone, Building2, FileSpreadsheet,
   ArrowLeft, Award, Backpack, Users, Copy
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/registro")({
-  head: () => ({
-    meta: [
-      { title: "Inscripción · VIII CIBU 2026" },
-      { name: "description", content: "Inscríbete al VIII Congreso Internacional de Bibliotecas Universitarias. Pago vía Yape o transferencia bancaria." },
-      { property: "og:title", content: "Inscripción VIII CIBU 2026" },
-      { property: "og:description", content: "Beneficios, métodos de pago y formulario de inscripción." },
-      { property: "og:url", content: "https://cibu.lovable.app/registro" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://cibu.lovable.app/registro" },
-    ],
-  }),
   component: Registro,
 });
 
@@ -50,6 +38,14 @@ function CopyField({ label, value }: { label: string; value: string }) {
 }
 
 function Registro() {
+  useEffect(() => {
+    const prev = document.title;
+    document.title = "Inscripción · VIII CIBU 2026";
+    return () => {
+      document.title = prev;
+    };
+  }, []);
+
   const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfArpZlkD_54qhWp7CUUU9d5nXDQPtsTGeWDQUmMvueKfh3UA/viewform?usp=header";
 
   return (
