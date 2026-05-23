@@ -363,7 +363,7 @@ function Index() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {sponsors.map((s) => {
               const cardClass = `border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`;
-              const inner = <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />;
+              const inner = <img src={s.logo} alt={`${s.name} logo`} className="max-h-16 max-w-full object-contain" loading="lazy" />;
               return s.href ? (
                 <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className={cardClass} aria-label={s.name}>
                   {inner}
