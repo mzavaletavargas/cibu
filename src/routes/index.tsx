@@ -18,6 +18,9 @@ import logoBmj from "@/assets/sponsors/bmj.png";
 import logoPanamericana from "@/assets/sponsors/panamericana.png";
 import logoEscuela from "@/assets/sponsors/escuela-biblio.png";
 import logoLocaly from "@/assets/sponsors/localy.svg";
+import logoDigitalContent from "@/assets/sponsors/digital-content.png";
+import logoElibro from "@/assets/sponsors/elibro.png";
+import logoMaskhay from "@/assets/sponsors/maskhay.png";
 import {
   Sparkles, Network, Shield, GraduationCap, Archive,
   Calendar, MapPin, Users, FileText, ArrowRight, Check, Mail
@@ -58,6 +61,9 @@ const sponsors = [
   { name: "BMJ Journals", logo: logoBmj, dark: false },
   { name: "Editorial Panamericana", logo: logoPanamericana, dark: false },
   { name: "Escuela de Bibliotecólogos", logo: logoEscuela, dark: true },
+  { name: "Digital Content", logo: logoDigitalContent, dark: false },
+  { name: "eLibro", logo: logoElibro, dark: false },
+  { name: "Maskhay Corp", logo: logoMaskhay, dark: false },
   { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
 
