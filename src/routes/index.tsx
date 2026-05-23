@@ -33,6 +33,38 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "VIII Congreso Internacional de Bibliotecas Universitarias. Del 13 al 16 de julio de 2026 en la Universidad Privada Antenor Orrego, Trujillo, Perú." },
       { property: "og:title", content: "VIII CIBU 2026 — Bibliotecas e IA" },
       { property: "og:description", content: "Construyendo futuros posibles: del acceso al conocimiento a la preservación de la memoria cultural." },
+      { property: "og:url", content: "https://cibu.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cibu.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: "VIII Congreso Internacional de Bibliotecas Universitarias",
+          startDate: "2026-07-13",
+          endDate: "2026-07-16",
+          eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+          eventStatus: "https://schema.org/EventScheduled",
+          location: {
+            "@type": "Place",
+            name: "Universidad Privada Antenor Orrego",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Av. América Sur 3145",
+              addressLocality: "Trujillo",
+              postalCode: "13008",
+              addressCountry: "PE",
+            },
+          },
+          description: "VIII Congreso Internacional de Bibliotecas Universitarias — Bibliotecas e IA: construyendo futuros posibles.",
+          url: "https://cibu.lovable.app/",
+          organizer: { "@type": "Organization", name: "CIBU" },
+        }),
+      },
     ],
   }),
   component: Index,
@@ -75,7 +107,7 @@ function Index() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" width={1920} height={1080} className="w-full h-full object-cover" />
+          <img src={heroImg} alt="" width={1920} height={1080} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.15 0.05 260 / 0.92), oklch(0.18 0.06 270 / 0.78))" }} />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-32 md:pt-32 md:pb-40 text-white">
@@ -331,7 +363,7 @@ function Index() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {sponsors.map((s) => {
               const cardClass = `border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`;
-              const inner = <img src={s.logo} alt={s.name} className="max-h-16 max-w-full object-contain" loading="lazy" />;
+              const inner = <img src={s.logo} alt={`${s.name} logo`} className="max-h-16 max-w-full object-contain" loading="lazy" />;
               return s.href ? (
                 <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className={cardClass} aria-label={s.name}>
                   {inner}
