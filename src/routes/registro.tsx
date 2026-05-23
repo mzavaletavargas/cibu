@@ -15,6 +15,10 @@ export const Route = createFileRoute("/registro")({
       { name: "description", content: "Inscríbete al VIII Congreso Internacional de Bibliotecas Universitarias. Pago vía Yape o transferencia bancaria." },
       { property: "og:title", content: "Inscripción VIII CIBU 2026" },
       { property: "og:description", content: "Beneficios, métodos de pago y formulario de inscripción." },
+      { property: "og:url", content: "https://cibu.lovable.app/registro" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://cibu.lovable.app/registro" },
     ],
   }),
   component: Registro,
