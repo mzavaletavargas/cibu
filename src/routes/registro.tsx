@@ -134,7 +134,7 @@ function Registro() {
             <div className="mt-6 pt-6 border-t border-border">
               <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Transferencias internacionales</div>
               <div className="space-y-3">
-                <CopyField label="Account Number US$" value="0011-0351-010003315" />
+                <CopyField label="Account Number US$" value="0011-0351-0100033150-42" />
                 <CopyField label="Bank Address" value="Av. República de Panamá 3055 - San Isidro, Lima, Perú" />
               </div>
             </div>
