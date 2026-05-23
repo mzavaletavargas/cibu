@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "VIII CIBU 2026" },
-      { name: "twitter:description", content: "CIBU Futures is a landing page for the VIII International Congress of University Libraries." },
+      { name: "twitter:description", content: "VIII Congreso Internacional de Bibliotecas Universitarias — Bibliotecas e IA: construyendo futuros posibles." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d9951686-7de3-45fd-a30e-bc5d16649c7f/id-preview-9d9aded1--95e1af03-d725-4307-86c9-2593d2fc226a.lovable.app-1778343971601.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d9951686-7de3-45fd-a30e-bc5d16649c7f/id-preview-9d9aded1--95e1af03-d725-4307-86c9-2593d2fc226a.lovable.app-1778343971601.png" },
     ],
