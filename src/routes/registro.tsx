@@ -125,9 +125,18 @@ function Registro() {
               </div>
             </div>
             <div className="space-y-3">
-              <CopyField label="Banco" value="BCP — Soles" />
-              <CopyField label="Cuenta" value="123-4567890-0-12" />
-              <CopyField label="CCI" value="002-123-004567890012-34" />
+              <CopyField label="Beneficiario" value="EDUCATION LINK S.A.C." />
+              <CopyField label="RUC" value="20602277586" />
+              <CopyField label="Banco" value="BBVA Banco Continental" />
+              <CopyField label="Cuenta Corriente Dólares" value="0011-0351-0100033150-42" />
+              <CopyField label="CCI" value="011-351-000100033150-42" />
+            </div>
+            <div className="mt-6 pt-6 border-t border-border">
+              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Transferencias internacionales</div>
+              <div className="space-y-3">
+                <CopyField label="Account Number US$" value="0011-0351-010003315" />
+                <CopyField label="Bank Address" value="Av. República de Panamá 3055 - San Isidro, Lima, Perú" />
+              </div>
             </div>
           </div>
         </div>
