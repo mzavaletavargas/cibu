@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="bg-white/95 inline-flex p-2 rounded-lg mb-4">
-            <img src={LOGO_URL} alt="CIBU" width={64} height={48} loading="lazy" decoding="async" className="h-12 w-auto object-contain" />
+            <img src={LOGO_URL} alt="VIII CIBU 2026 logo" width={64} height={48} loading="lazy" decoding="async" className="h-12 w-auto object-contain" />
           </div>
           <h3 className="font-display text-2xl mb-3">VIII CIBU 2026</h3>
           <p className="text-sm opacity-80 leading-relaxed">
