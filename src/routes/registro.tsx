@@ -108,7 +108,7 @@ function Registro() {
               </div>
             </div>
             <div className="space-y-3">
-              <CopyField label="Yape · Lucca Ravest Castillo" value="+51 968 709 488" />
+              <CopyField label="Yape · Lucca Ravest Castillo" value="968 709 488" />
               <CopyField label="Yape · Humberto Ravest" value="945 496 456" />
             </div>
 

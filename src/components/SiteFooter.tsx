@@ -28,7 +28,7 @@ export function SiteFooter() {
           </div>
           <div className="pt-2 border-t border-white/10 mt-2 space-y-1">
             <div className="font-semibold text-white/95">Yape</div>
-            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:+51968709488" className="hover:text-[var(--gold)] transition">+51 968 709 488</a> — Lucca Ravest Castillo</div>
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:968709488" className="hover:text-[var(--gold)] transition">968 709 488</a> — Lucca Ravest Castillo</div>
             <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:+51945496456" className="hover:text-[var(--gold)] transition">945 496 456</a> — Humberto Ravest</div>
           </div>
         </div>
