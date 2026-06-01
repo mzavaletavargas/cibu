@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin, Phone } from "lucide-react";
 
 const LOGO_URL = "https://res.cloudinary.com/dtioir2dl/image/upload/f_auto,q_auto,w_160,dpr_auto/v1778733901/cibu-logo_dfkk9f.png";
 
