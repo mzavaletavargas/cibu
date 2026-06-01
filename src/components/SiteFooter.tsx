@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin, Phone } from "lucide-react";
 
 const LOGO_URL = "https://res.cloudinary.com/dtioir2dl/image/upload/f_auto,q_auto,w_160,dpr_auto/v1778733901/cibu-logo_dfkk9f.png";
 
@@ -21,6 +21,16 @@ export function SiteFooter() {
           <div className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" /> <span>Universidad Privada Antenor Orrego, Av. América Sur 3145, Trujillo 13008</span></div>
           <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> cibu.bibliotecas@gmail.com</div>
           <div>13–16 de julio de 2026</div>
+          <div className="pt-2 border-t border-white/10 mt-2 space-y-1">
+            <div className="font-semibold text-white/95">Contacto</div>
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:+51945496456" className="hover:text-[var(--gold)] transition">945 496 456</a></div>
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:+51986160732" className="hover:text-[var(--gold)] transition">986 160 732</a></div>
+          </div>
+          <div className="pt-2 border-t border-white/10 mt-2 space-y-1">
+            <div className="font-semibold text-white/95">Yape</div>
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:+51968709488" className="hover:text-[var(--gold)] transition">+51 968 709 488</a> — Lucca Ravest Castillo</div>
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <a href="tel:+51945496456" className="hover:text-[var(--gold)] transition">945 496 456</a> — Humberto Ravest</div>
+          </div>
         </div>
         <div className="md:text-right">
           <div className="flex md:justify-end gap-3">
