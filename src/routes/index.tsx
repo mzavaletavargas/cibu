@@ -60,6 +60,45 @@ const sponsors = [
   { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
 
+const expositores: { name: string; institution: string; country?: string }[] = [
+  { name: "Modesto Montoya", institution: "Universidad Nacional de Ingeniería", country: "Perú" },
+  { name: "Karen Jara", institution: "Universidad de Concepción", country: "Chile" },
+  { name: "Elizabeth Huiza", institution: "Escuela de Bibliotecología — UNMSM", country: "Perú" },
+  { name: "Celso Gonzáles Cam", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Humberto Ravest", institution: "Consultor en Gestión del Conocimiento", country: "Chile / Perú" },
+  { name: "Jairo Hernán Díaz Arias", institution: "Mc Graw Hill / Libun", country: "Colombia" },
+  { name: "Jairo Ramírez Molina", institution: "Libun / Digital Content", country: "Colombia" },
+  { name: "Bernardo Rojas", institution: "Universidad de O'Higgins", country: "Chile" },
+  { name: "José Ignacio López Ramírez Gastón", institution: "Open Science Community Perú", country: "Perú" },
+  { name: "Julio Santillán", institution: "Colectivo Open Access Perú", country: "Perú" },
+  { name: "David Quispe", institution: "CONCYTEC", country: "Perú" },
+  { name: "Alan Cáceres", institution: "RENATI", country: "Perú" },
+  { name: "Cecilia Alegre", institution: "ESAN CENDOC", country: "Perú" },
+  { name: "Oscar Pilco", institution: "ESAN CENDOC", country: "Perú" },
+  { name: "Celso Garzón", institution: "ITMS Group", country: "Perú" },
+  { name: "Yuneli Cueva Ríos", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Vania Namuche Zavaleta", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Valeryn Namuche Zavaleta", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Rocío Aponte", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Henry Chávez", institution: "Colegio de Bibliotecólogos del Perú", country: "Perú" },
+  { name: "Anabelly Tinoco Altamirano", institution: "Universidad Nacional, Campus Omar Dengo", country: "Costa Rica" },
+  { name: "Ivannia Conejo Chinchilla", institution: "Universidad Nacional, Campus Omar Dengo", country: "Costa Rica" },
+  { name: "Karina Vargas García", institution: "Universidad Castro Carazo", country: "Costa Rica" },
+  { name: "Fabiola Arguedas Segura", institution: "Universidad Castro Carazo", country: "Costa Rica" },
+  { name: "Estefany Navarro Barquero", institution: "Universidad Castro Carazo", country: "Costa Rica" },
+  { name: "Ángela Clemencia Serna", institution: "CEIPA", country: "Colombia" },
+  { name: "Huber Gómez", institution: "Support Pro Consulting", country: "Colombia" },
+  { name: "Anderson Julián Murillo Ortega", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Sebastián Alejandro Castro Pinzón", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Sandra Milena Afanador Báez", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Lizbleydi Yarith Aparicio Solano", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Jesús Miguel Ipanaqué Peña", institution: "Universidad Privada del Norte", country: "Perú" },
+  { name: "Ángel Revolledo Morán", institution: "Mc Graw Hill / Libun", country: "Perú" },
+  { name: "Marlene Benavides", institution: "Fundación del Libro Universitario — Libun", country: "Perú" },
+  { name: "Raúl Manco", institution: "eLibro", country: "Perú" },
+  { name: "Conferencista invitado", institution: "eLibro — Charla Magistral", country: "EE. UU." },
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
