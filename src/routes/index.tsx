@@ -91,6 +91,9 @@ function Index() {
             >
               Inscribirme al congreso <ArrowRight className="w-4 h-4" />
             </Link>
+            <Link to="/programa" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition">
+              <Calendar className="w-4 h-4" /> Ver programa
+            </Link>
             <a href="#convocatoria" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition">
               Convocatoria de trabajos
             </a>
