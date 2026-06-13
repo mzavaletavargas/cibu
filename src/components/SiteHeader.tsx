@@ -16,6 +16,7 @@ export function SiteHeader() {
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <a href="/#sobre" className="text-muted-foreground hover:text-foreground transition">Sobre</a>
           <a href="/#ejes" className="text-muted-foreground hover:text-foreground transition">Ejes</a>
+          <Link to="/programa" className="text-muted-foreground hover:text-foreground transition">Programa</Link>
           <a href="/#convocatoria" className="text-muted-foreground hover:text-foreground transition">Convocatoria</a>
           <a href="/#sponsors" className="text-muted-foreground hover:text-foreground transition">Sponsors</a>
         </nav>
