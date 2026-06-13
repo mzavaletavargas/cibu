@@ -297,24 +297,55 @@ function Index() {
         </div>
       </section>
 
+      {/* CTA PROGRAMA */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border p-10 md:p-14" style={{ background: "var(--gradient-hero)", boxShadow: "var(--shadow-elegant)" }}>
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-20 blur-3xl" style={{ background: "var(--gold)" }} />
+          <div className="relative grid md:grid-cols-5 gap-8 items-center text-white">
+            <div className="md:col-span-3">
+              <div className="text-xs uppercase tracking-[0.25em] font-semibold mb-3" style={{ color: "var(--gold)" }}>Programa</div>
+              <h2 className="font-display text-3xl md:text-5xl mb-4">5 días · 4 charlas magistrales · 21 conferencias.</h2>
+              <p className="text-white/80 leading-relaxed">
+                Talleres, conferencias internacionales, mesas redondas y un paseo cultural por Huacas del Sol y la Luna y Chan Chan. Revisa el programa día por día.
+              </p>
+            </div>
+            <div className="md:col-span-2 flex md:justify-end">
+              <Link
+                to="/programa"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
+                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+              >
+                <Calendar className="w-5 h-5" /> Ver programa completo <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* EXPOSITORES */}
-      <section id="expositores" className="max-w-6xl mx-auto px-6 py-24 text-center">
-        <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Expositores</div>
-        <h2 className="font-display text-4xl md:text-5xl mb-4">Pronto se publicarán.</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-10">
-          Estamos confirmando a los conferencistas de Latinoamérica y España. Esta sección se actualizará pronto con el line-up completo.
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="aspect-square rounded-2xl border border-dashed border-border bg-secondary/30 flex flex-col items-center justify-center p-4"
-            >
-              <Users className="w-8 h-8 text-[var(--gold)] mb-3 opacity-70" />
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Próximamente</div>
+      <section id="expositores" className="max-w-6xl mx-auto px-6 py-24">
+        <div className="text-center mb-14">
+          <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Expositores</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-4">Voces de Latinoamérica y más allá.</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Profesionales e investigadores de Perú, Chile, Colombia, Costa Rica y EE. UU. confirmados para el VIII CIBU 2026. Las fotografías se publicarán próximamente.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {expositores.map((e, i) => (
+            <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-[var(--gold)] transition flex gap-4">
+              <div className="w-14 h-14 shrink-0 rounded-full flex items-center justify-center font-display font-bold text-lg text-[var(--gold-foreground)]" style={{ background: "var(--gradient-gold)" }}>
+                {e.name.split(" ").filter(w => w[0] && w[0] === w[0].toUpperCase()).slice(0,2).map(w => w[0]).join("")}
+              </div>
+              <div className="min-w-0">
+                <div className="font-semibold leading-tight">{e.name}</div>
+                <div className="text-sm text-muted-foreground mt-1 leading-snug">{e.institution}</div>
+                {e.country && <div className="text-xs uppercase tracking-wider text-[var(--gold)] mt-2 font-semibold">{e.country}</div>}
+              </div>
             </div>
           ))}
         </div>
+        <p className="text-center text-sm text-muted-foreground mt-10 italic">Lista preliminar · sujeta a confirmaciones y nuevas incorporaciones.</p>
       </section>
 
       {/* SPONSORS */}
