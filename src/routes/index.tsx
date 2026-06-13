@@ -295,20 +295,24 @@ function Index() {
       </section>
 
       {/* VIDEO */}
-      <section id="video" className="bg-secondary/40 border-y border-border py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
+      <section id="video" className="bg-secondary/40 border-y border-border py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 md:mb-10">
             <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">
               Video
             </div>
-            <h2 className="font-display text-4xl md:text-5xl">Conoce el VIII CIBU 2026.</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            <h2 className="font-display text-3xl md:text-5xl">Conoce el VIII CIBU 2026.</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm md:text-base">
               Mira el video oficial de invitación al congreso.
             </p>
           </div>
           <div
-            className="relative w-full overflow-hidden rounded-2xl border border-border bg-black"
-            style={{ aspectRatio: "16 / 9", boxShadow: "var(--shadow-elegant)" }}
+            className="relative w-full overflow-hidden rounded-lg md:rounded-2xl border border-border bg-black"
+            style={{
+              aspectRatio: "16 / 9",
+              boxShadow: "var(--shadow-elegant)",
+              minHeight: "200px",
+            }}
           >
             <iframe
               src="https://drive.google.com/file/d/1-pmbYq9E7438YAzSl-dHAGVM_etRzarx/preview"
