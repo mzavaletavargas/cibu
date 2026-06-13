@@ -60,6 +60,45 @@ const sponsors = [
   { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
 
+const expositores: { name: string; institution: string; country?: string }[] = [
+  { name: "Modesto Montoya", institution: "Universidad Nacional de Ingeniería", country: "Perú" },
+  { name: "Karen Jara", institution: "Universidad de Concepción", country: "Chile" },
+  { name: "Elizabeth Huiza", institution: "Escuela de Bibliotecología — UNMSM", country: "Perú" },
+  { name: "Celso Gonzáles Cam", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Humberto Ravest", institution: "Consultor en Gestión del Conocimiento", country: "Chile / Perú" },
+  { name: "Jairo Hernán Díaz Arias", institution: "Mc Graw Hill / Libun", country: "Colombia" },
+  { name: "Jairo Ramírez Molina", institution: "Libun / Digital Content", country: "Colombia" },
+  { name: "Bernardo Rojas", institution: "Universidad de O'Higgins", country: "Chile" },
+  { name: "José Ignacio López Ramírez Gastón", institution: "Open Science Community Perú", country: "Perú" },
+  { name: "Julio Santillán", institution: "Colectivo Open Access Perú", country: "Perú" },
+  { name: "David Quispe", institution: "CONCYTEC", country: "Perú" },
+  { name: "Alan Cáceres", institution: "RENATI", country: "Perú" },
+  { name: "Cecilia Alegre", institution: "ESAN CENDOC", country: "Perú" },
+  { name: "Oscar Pilco", institution: "ESAN CENDOC", country: "Perú" },
+  { name: "Celso Garzón", institution: "ITMS Group", country: "Perú" },
+  { name: "Yuneli Cueva Ríos", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Vania Namuche Zavaleta", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Valeryn Namuche Zavaleta", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Rocío Aponte", institution: "Universidad Nacional Mayor de San Marcos", country: "Perú" },
+  { name: "Henry Chávez", institution: "Colegio de Bibliotecólogos del Perú", country: "Perú" },
+  { name: "Anabelly Tinoco Altamirano", institution: "Universidad Nacional, Campus Omar Dengo", country: "Costa Rica" },
+  { name: "Ivannia Conejo Chinchilla", institution: "Universidad Nacional, Campus Omar Dengo", country: "Costa Rica" },
+  { name: "Karina Vargas García", institution: "Universidad Castro Carazo", country: "Costa Rica" },
+  { name: "Fabiola Arguedas Segura", institution: "Universidad Castro Carazo", country: "Costa Rica" },
+  { name: "Estefany Navarro Barquero", institution: "Universidad Castro Carazo", country: "Costa Rica" },
+  { name: "Ángela Clemencia Serna", institution: "CEIPA", country: "Colombia" },
+  { name: "Huber Gómez", institution: "Support Pro Consulting", country: "Colombia" },
+  { name: "Anderson Julián Murillo Ortega", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Sebastián Alejandro Castro Pinzón", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Sandra Milena Afanador Báez", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Lizbleydi Yarith Aparicio Solano", institution: "Universidad de Investigación y Desarrollo (UDI)", country: "Colombia" },
+  { name: "Jesús Miguel Ipanaqué Peña", institution: "Universidad Privada del Norte", country: "Perú" },
+  { name: "Ángel Revolledo Morán", institution: "Mc Graw Hill / Libun", country: "Perú" },
+  { name: "Marlene Benavides", institution: "Fundación del Libro Universitario — Libun", country: "Perú" },
+  { name: "Raúl Manco", institution: "eLibro", country: "Perú" },
+  { name: "Conferencista invitado", institution: "eLibro — Charla Magistral", country: "EE. UU." },
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -90,6 +129,9 @@ function Index() {
               style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
             >
               Inscribirme al congreso <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/programa" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition">
+              <Calendar className="w-4 h-4" /> Ver programa
             </Link>
             <a href="#convocatoria" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition">
               Convocatoria de trabajos
@@ -294,24 +336,55 @@ function Index() {
         </div>
       </section>
 
+      {/* CTA PROGRAMA */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border p-10 md:p-14" style={{ background: "var(--gradient-hero)", boxShadow: "var(--shadow-elegant)" }}>
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-20 blur-3xl" style={{ background: "var(--gold)" }} />
+          <div className="relative grid md:grid-cols-5 gap-8 items-center text-white">
+            <div className="md:col-span-3">
+              <div className="text-xs uppercase tracking-[0.25em] font-semibold mb-3" style={{ color: "var(--gold)" }}>Programa</div>
+              <h2 className="font-display text-3xl md:text-5xl mb-4">5 días · 4 charlas magistrales · 21 conferencias.</h2>
+              <p className="text-white/80 leading-relaxed">
+                Talleres, conferencias internacionales, mesas redondas y un paseo cultural por Huacas del Sol y la Luna y Chan Chan. Revisa el programa día por día.
+              </p>
+            </div>
+            <div className="md:col-span-2 flex md:justify-end">
+              <Link
+                to="/programa"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
+                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+              >
+                <Calendar className="w-5 h-5" /> Ver programa completo <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* EXPOSITORES */}
-      <section id="expositores" className="max-w-6xl mx-auto px-6 py-24 text-center">
-        <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Expositores</div>
-        <h2 className="font-display text-4xl md:text-5xl mb-4">Pronto se publicarán.</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-10">
-          Estamos confirmando a los conferencistas de Latinoamérica y España. Esta sección se actualizará pronto con el line-up completo.
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="aspect-square rounded-2xl border border-dashed border-border bg-secondary/30 flex flex-col items-center justify-center p-4"
-            >
-              <Users className="w-8 h-8 text-[var(--gold)] mb-3 opacity-70" />
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Próximamente</div>
+      <section id="expositores" className="max-w-6xl mx-auto px-6 py-24">
+        <div className="text-center mb-14">
+          <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">Expositores</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-4">Voces de Latinoamérica y más allá.</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Profesionales e investigadores de Perú, Chile, Colombia, Costa Rica y EE. UU. confirmados para el VIII CIBU 2026. Las fotografías se publicarán próximamente.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {expositores.map((e, i) => (
+            <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-[var(--gold)] transition flex gap-4">
+              <div className="w-14 h-14 shrink-0 rounded-full flex items-center justify-center font-display font-bold text-lg text-[var(--gold-foreground)]" style={{ background: "var(--gradient-gold)" }}>
+                {e.name.split(" ").filter(w => w[0] && w[0] === w[0].toUpperCase()).slice(0,2).map(w => w[0]).join("")}
+              </div>
+              <div className="min-w-0">
+                <div className="font-semibold leading-tight">{e.name}</div>
+                <div className="text-sm text-muted-foreground mt-1 leading-snug">{e.institution}</div>
+                {e.country && <div className="text-xs uppercase tracking-wider text-[var(--gold)] mt-2 font-semibold">{e.country}</div>}
+              </div>
             </div>
           ))}
         </div>
+        <p className="text-center text-sm text-muted-foreground mt-10 italic">Lista preliminar · sujeta a confirmaciones y nuevas incorporaciones.</p>
       </section>
 
       {/* SPONSORS */}
