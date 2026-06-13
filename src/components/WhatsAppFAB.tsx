@@ -14,7 +14,10 @@ export function WhatsAppFAB() {
       <span className="hidden group-hover:inline bg-card text-foreground text-sm px-3 py-1.5 rounded-full shadow-lg border border-border">
         +51 957 555 418
       </span>
-      <span className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl transition transform group-hover:scale-110" style={{ background: "linear-gradient(135deg, #25D366, #128C7E)" }}>
+      <span
+        className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl transition transform group-hover:scale-110"
+        style={{ background: "linear-gradient(135deg, #25D366, #128C7E)" }}
+      >
         <MessageCircle className="w-7 h-7" fill="currentColor" />
       </span>
     </a>

@@ -3,14 +3,10 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-const LOGO_URL = "https://res.cloudinary.com/dtioir2dl/image/upload/f_auto,q_auto,w_120,dpr_auto/v1778733901/cibu-logo_dfkk9f.png";
+const LOGO_URL =
+  "https://res.cloudinary.com/dtioir2dl/image/upload/f_auto,q_auto,w_120,dpr_auto/v1778733901/cibu-logo_dfkk9f.png";
 
 const navLinks = [
   { label: "Sobre", href: "/#sobre" },
@@ -28,10 +24,20 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={LOGO_URL} alt="VIII CIBU 2026 logo" width={48} height={40} loading="eager" decoding="async" className="h-10 w-auto object-contain" />
+          <img
+            src={LOGO_URL}
+            alt="VIII CIBU 2026 logo"
+            width={48}
+            height={40}
+            loading="eager"
+            decoding="async"
+            className="h-10 w-auto object-contain"
+          />
           <div className="leading-tight">
             <div className="font-display font-bold text-foreground">VIII CIBU</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">2026 · Trujillo</div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              2026 · Trujillo
+            </div>
           </div>
         </Link>
 
@@ -41,7 +47,7 @@ export function SiteHeader() {
             link.href.startsWith("/") ? (
               <Link
                 key={link.label}
-                to={link.href as any}
+                to={link.href}
                 className="text-muted-foreground hover:text-foreground transition"
               >
                 {link.label}
@@ -54,7 +60,7 @@ export function SiteHeader() {
               >
                 {link.label}
               </a>
-            )
+            ),
           )}
         </nav>
 

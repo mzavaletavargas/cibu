@@ -39,30 +39,30 @@
   --radius: 0.75rem;
   /* Deep navy academic + warm gold */
   --background: oklch(0.99 0.005 90);
-  --foreground: #0056A3;
+  --foreground: #0056a3;
   --card: oklch(1 0 0);
-  --card-foreground: #0056A3;
+  --card-foreground: #0056a3;
   --popover: oklch(1 0 0);
-  --popover-foreground: #0056A3;
-  --primary: #0056A3;
+  --popover-foreground: #0056a3;
+  --primary: #0056a3;
   --primary-foreground: oklch(0.98 0.01 90);
   --secondary: oklch(0.95 0.02 80);
-  --secondary-foreground: #0056A3;
+  --secondary-foreground: #0056a3;
   --muted: oklch(0.96 0.01 90);
   --muted-foreground: #3a6ea0;
   --accent: oklch(0.78 0.14 75);
-  --accent-foreground: #0056A3;
+  --accent-foreground: #0056a3;
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0.015 90);
   --input: oklch(0.9 0.015 90);
   --ring: oklch(0.78 0.14 75);
   --gold: oklch(0.78 0.14 75);
-  --gold-foreground: #0056A3;
-  --deep: #0056A3;
-  --gradient-hero: linear-gradient(135deg, #003D75 0%, #0056A3 60%, #1A75CC 100%);
+  --gold-foreground: #0056a3;
+  --deep: #0056a3;
+  --gradient-hero: linear-gradient(135deg, #003d75 0%, #0056a3 60%, #1a75cc 100%);
   --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 80), oklch(0.7 0.16 60));
-  --shadow-elegant: 0 20px 60px -20px #0056A366;
+  --shadow-elegant: 0 20px 60px -20px #0056a366;
   --shadow-gold: 0 10px 40px -10px oklch(0.78 0.14 75 / 0.5);
 }
 
@@ -87,8 +87,21 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { font-family: var(--font-sans); }
-  body { background-color: var(--color-background); color: var(--color-foreground); }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
