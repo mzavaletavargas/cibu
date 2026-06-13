@@ -117,8 +117,7 @@ const days: Day[] = [
         kind: "Conferencia 1",
         title: "Alfabetización con IA en la Política Nacional de Transformación Digital",
         speaker: "Elizabeth Huiza",
-        institution:
-          "Escuela Profesional de Bibliotecología y Ciencias de la Información — UNMSM",
+        institution: "Escuela Profesional de Bibliotecología y Ciencias de la Información — UNMSM",
       },
       { time: "10:35 – 11:05", title: "Coffee break", break: true },
       {
@@ -155,8 +154,7 @@ const days: Day[] = [
       {
         time: "15:10 – 15:45",
         kind: "Conferencia 6",
-        title:
-          "Importancia de las bibliotecas + IA en el desarrollo académico de los usuarios",
+        title: "Importancia de las bibliotecas + IA en el desarrollo académico de los usuarios",
         speaker: "Vania Namuche Zavaleta",
         institution: "UNMSM",
       },
@@ -281,8 +279,7 @@ const days: Day[] = [
         time: "18:10 – 19:10",
         kind: "Mesa redonda 2",
         title: "Open Access para docencia e investigación",
-        speaker:
-          "Dr. José Ignacio López Ramírez Gastón · Dr. Julio Santillán · Humberto Ravest",
+        speaker: "Dr. José Ignacio López Ramírez Gastón · Dr. Julio Santillán · Humberto Ravest",
         institution:
           "Open Science Community Perú · Colectivo Open Access Perú · Consultor en Gestión del Conocimiento (Chile/Perú)",
       },
@@ -366,18 +363,23 @@ function ProgramaPage() {
             Programa oficial
           </div>
           <h1 className="font-display text-4xl md:text-6xl leading-[1.05] max-w-4xl">
-            Programa del <span className="italic" style={{ color: "var(--gold)" }}>VIII CIBU</span> 2026
+            Programa del{" "}
+            <span className="italic" style={{ color: "var(--gold)" }}>
+              VIII CIBU
+            </span>{" "}
+            2026
           </h1>
           <p className="mt-6 text-lg md:text-xl max-w-2xl text-white/80 leading-relaxed">
-            Cuatro días de talleres, conferencias y mesas redondas, más una jornada cultural,
-            entre el 13 y el 17 de julio en Trujillo, Perú.
+            Cuatro días de talleres, conferencias y mesas redondas, más una jornada cultural, entre
+            el 13 y el 17 de julio en Trujillo, Perú.
           </p>
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/80">
             <div className="inline-flex items-center gap-2">
               <MapPin className="w-4 h-4" style={{ color: "var(--gold)" }} /> UPAO · Trujillo, Perú
             </div>
             <div className="inline-flex items-center gap-2">
-              <Clock className="w-4 h-4" style={{ color: "var(--gold)" }} /> 13 – 17 de julio de 2026
+              <Clock className="w-4 h-4" style={{ color: "var(--gold)" }} /> 13 – 17 de julio de
+              2026
             </div>
           </div>
         </div>
@@ -411,13 +413,14 @@ function ProgramaPage() {
                   {d.weekday}
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl">{d.date}</h2>
-                {d.subtitle && (
-                  <p className="text-muted-foreground mt-1">{d.subtitle}</p>
-                )}
+                {d.subtitle && <p className="text-muted-foreground mt-1">{d.subtitle}</p>}
               </div>
             </header>
 
-            <div className="bg-card border border-border rounded-2xl overflow-hidden" style={{ boxShadow: "var(--shadow-elegant)" }}>
+            <div
+              className="bg-card border border-border rounded-2xl overflow-hidden"
+              style={{ boxShadow: "var(--shadow-elegant)" }}
+            >
               <ul className="divide-y divide-border">
                 {d.rows.map((r, i) => (
                   <li
@@ -445,13 +448,17 @@ function ProgramaPage() {
                     </div>
                     <div className="min-w-0">
                       {r.title && (
-                        <div className={`leading-snug ${r.break ? "text-muted-foreground italic" : "font-medium"}`}>
+                        <div
+                          className={`leading-snug ${r.break ? "text-muted-foreground italic" : "font-medium"}`}
+                        >
                           {r.title}
                         </div>
                       )}
                       {(r.speaker || r.institution) && (
                         <div className="mt-2 text-sm text-muted-foreground">
-                          {r.speaker && <span className="text-foreground font-semibold">{r.speaker}</span>}
+                          {r.speaker && (
+                            <span className="text-foreground font-semibold">{r.speaker}</span>
+                          )}
                           {r.speaker && r.institution && <span> · </span>}
                           {r.institution && <span>{r.institution}</span>}
                         </div>
