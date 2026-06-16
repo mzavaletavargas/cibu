@@ -96,17 +96,32 @@ export function SiteFooter() {
           <div>© {year} CIBU. Todos los derechos reservados.</div>
           <div>Director ejecutivo: Ing. Humberto Ravest B.</div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 pb-5 text-xs opacity-60 text-center md:text-right">
-          Sitio web creado por{" "}
-          <a
-            href="https://gustavozavaleta.com/?utm_source=cibu&utm_medium=footer&utm_campaign=cibu2026"
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:opacity-100 hover:text-[var(--gold)] transition"
-          >
-            Gustavo Zavaleta
-          </a>
-          .
+        <div className="max-w-7xl mx-auto px-6 pb-5 text-xs opacity-60 text-center md:text-right space-y-1">
+          <div>
+            Sitio web creado por{" "}
+            <a
+              href="https://gustavozavaleta.com/?utm_source=cibu&utm_medium=footer&utm_campaign=cibu2026"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:opacity-100 hover:text-[var(--gold)] transition"
+            >
+              Gustavo Zavaleta
+            </a>
+            .
+          </div>
+          <div className="opacity-70">
+            Con el apoyo de{" "}
+            <a
+              href="https://www.localy.lat"
+              target="_blank"
+              rel="noopener"
+              title="Localy — espacios para eventos"
+              className="hover:opacity-100 hover:text-[var(--gold)] transition"
+            >
+              Localy
+            </a>{" "}
+            — espacios para eventos.
+          </div>
         </div>
       </div>
     </footer>

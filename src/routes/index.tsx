@@ -1,5 +1,13 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import heroImg from "@/assets/hero-cibu.jpg";
@@ -11,16 +19,39 @@ const bannerSrcSet = [400, 800, 1200, 1600, 2000]
   .join(", ");
 import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
-import logoElsevier from "@/assets/sponsors/elsevier.avif";
 import logoCbp from "@/assets/sponsors/cbp.png";
 import logoSociologos from "@/assets/sponsors/sociologos.png";
-import logoBmj from "@/assets/sponsors/bmj.png";
-import logoPanamericana from "@/assets/sponsors/panamericana.png";
-import logoEscuela from "@/assets/sponsors/escuela-biblio.png";
-import logoLocaly from "@/assets/sponsors/localy.svg";
+import logoSanMarcos from "@/assets/sponsors/sanmarcos-unmsm.png";
 import logoDigitalContent from "@/assets/sponsors/digital-content.png";
 import logoElibro from "@/assets/sponsors/elibro.png";
 import logoMaskhay from "@/assets/sponsors/maskhay.png";
+import logoItms from "@/assets/sponsors/itms-group.jpeg";
+import logoEbsco from "@/assets/sponsors/ebsco.png";
+import logoEducationLink from "@/assets/sponsors/education-link.png";
+import logoOpenAccess from "@/assets/sponsors/open-access-peru.png";
+import logoOscp from "@/assets/sponsors/oscp.png";
+import logoUpao from "@/assets/sponsors/upao.png";
+import logoFondoUpao from "@/assets/sponsors/fondo-editorial-upao.png";
+import logoLocaly from "@/assets/sponsors/localy.svg";
+import fotoAngelaSerna from "@/assets/ponentes/angela-serna.jpeg";
+import fotoHuberGomez from "@/assets/ponentes/huber-gomez.jpeg";
+import fotoJairoDiaz from "@/assets/ponentes/jairo-diaz.png";
+import fotoAnabellyTinoco from "@/assets/ponentes/anabelly-tinoco.jpeg";
+import fotoHumbertoRavest from "@/assets/ponentes/humberto-ravest.png";
+import fotoKarenJara from "@/assets/ponentes/karen-jara.png";
+import fotoJoseIgnacioLopez from "@/assets/ponentes/jose-ignacio-lopez.jpeg";
+import fotoAngelRevolledo from "@/assets/ponentes/angel-revolledo.jpg";
+import fotoCelsoGonzales from "@/assets/ponentes/celso-gonzales-cam.jpg";
+import fotoCeciliaAlegre from "@/assets/ponentes/cecilia-alegre.png";
+import fotoDavidQuispe from "@/assets/ponentes/david-quispe.jpg";
+import fotoElizabethHuisa from "@/assets/ponentes/elizabeth-huisa.png";
+import fotoJesusIpanaque from "@/assets/ponentes/jesus-ipanaque.png";
+import fotoMarleneBenavides from "@/assets/ponentes/marlene-benavides.jpeg";
+import fotoModestoMontoya from "@/assets/ponentes/modesto-montoya.jpg";
+import fotoOscarPilco from "@/assets/ponentes/oscar-pilco.jpeg";
+import fotoVaniaNamuche from "@/assets/ponentes/vania-namuche.jpeg";
+import fotoRocioAponte from "@/assets/ponentes/rocio-aponte.jpg";
+import fotoValerynNamuche from "@/assets/ponentes/valeryn-namuche.jpg";
 import {
   Sparkles,
   Network,
@@ -76,128 +107,231 @@ const fechas = [
 ];
 
 const sponsors = [
-  { name: "LIBUN Editorial", logo: logoLibun, dark: false },
+  {
+    name: "Universidad Privada Antenor Orrego (UPAO)",
+    logo: logoUpao,
+    dark: false,
+    featured: true,
+  },
+  { name: "EBSCO", logo: logoEbsco, dark: false, featured: true },
+  { name: "eLibro", logo: logoElibro, dark: false, featured: true },
+  { name: "Education Link", logo: logoEducationLink, dark: false },
+  { name: "ITMS Group", logo: logoItms, dark: false },
   { name: "McGraw Hill", logo: logoMcGraw, dark: false },
-  { name: "Elsevier", logo: logoElsevier, dark: false },
-  { name: "Colegio de Bibliotecólogos del Perú", logo: logoCbp, dark: false },
-  { name: "Colegio de Sociólogos del Perú", logo: logoSociologos, dark: false },
-  { name: "BMJ Journals", logo: logoBmj, dark: false },
-  { name: "Editorial Panamericana", logo: logoPanamericana, dark: false },
-  { name: "Escuela de Bibliotecólogos", logo: logoEscuela, dark: true },
+  { name: "LIBUN Editorial", logo: logoLibun, dark: false },
   { name: "Digital Content", logo: logoDigitalContent, dark: false },
-  { name: "eLibro", logo: logoElibro, dark: false },
   { name: "Maskhay Corp", logo: logoMaskhay, dark: false },
+  { name: "Colegio de Bibliotecólogos del Perú", logo: logoCbp, dark: false },
+  { name: "Escuela de Bibliotecología — UNMSM", logo: logoSanMarcos, dark: false },
+  { name: "Colectivo Open Access Perú", logo: logoOpenAccess, dark: false },
+  { name: "Open Science Community Perú", logo: logoOscp, dark: false },
+  { name: "Colegio de Sociólogos del Perú", logo: logoSociologos, dark: false },
+  { name: "Fondo Editorial de la UPAO", logo: logoFondoUpao, dark: false },
   { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
 
-const expositores: { name: string; institution: string; country?: string }[] = [
-  { name: "Modesto Montoya", institution: "Universidad Nacional de Ingeniería", country: "Perú" },
-  { name: "Karen Jara", institution: "Universidad de Concepción", country: "Chile" },
-  { name: "Elizabeth Huiza", institution: "Escuela de Bibliotecología — UNMSM", country: "Perú" },
+type Expositor = {
+  name: string;
+  institution: string;
+  country: string;
+  photo: string;
+  bio: string[];
+};
+
+const expositores: Expositor[] = [
   {
-    name: "Celso Gonzáles Cam",
-    institution: "Universidad Nacional Mayor de San Marcos",
-    country: "Perú",
+    name: "Angela Clemencia Serna",
+    institution: "CEIPA — CRAI+I",
+    country: "Colombia",
+    photo: fotoAngelaSerna,
+    bio: [
+      "Bibliotecóloga de la Universidad de Antioquia, Magíster en gestión de la tecnología educativa, Coordinadora del Centro de recursos para el aprendizaje, la investigación y la innovación CRAI+I de CEIPA — Colombia.",
+      "Cuenta con amplia experiencia en diseño de ambientes virtuales de aprendizaje e inclusión de tecnologías en los procesos formativos. Actualmente forma parte de un grupo de investigación cuya línea de trabajo es la construcción y validación de un modelo de competencias digitales para los docentes de la Institución Universitaria Pascual Bravo. Tiene amplia experiencia en dirección de bibliotecas académicas y centros de recursos para el aprendizaje, la investigación y la innovación (CRAI).",
+    ],
+  },
+  {
+    name: "Huber Fernando Gómez Molina",
+    institution: "Support Pro Consulting",
+    country: "Colombia",
+    photo: fotoHuberGomez,
+    bio: [
+      "Bibliotecólogo, Especialista en Gestión Tecnológica y Magíster en desarrollo humano organizacional. Consultor de Support Pro Consulting — Colombia.",
+      "Consultor y formador en procesos de talento humano, con enfoque en el desarrollo de competencias digitales y la implementación de inteligencia artificial para optimizar la gestión organizacional.",
+    ],
+  },
+  {
+    name: "Jairo Hernán Díaz Arias",
+    institution: "Universidad del Quindío",
+    country: "Colombia",
+    photo: fotoJairoDiaz,
+    bio: [
+      "Profesional en Ciencias de la Información y la Documentación, Bibliotecología y Archivística. Especialista en Gerencia Informática. Creador y ex-director del Programa Virtual de la Universidad del Quindío (Colombia). Pionero en educación virtual en esta área a nivel iberoamericano.",
+      "Creador del primer software de educación en línea @prender, director y creador de la Biblioteca como CRAI en la U.Q. y creador del sistema colaborativo biblioteca.club.",
+      "Conferencista en temas de innovación, gestión de ideas, transformación digital y el futuro del trabajo en unidades de información en Colombia, Perú y Ecuador.",
+    ],
+  },
+  {
+    name: "Anabelly Tinoco Altamirano",
+    institution: "Universidad Nacional de Costa Rica",
+    country: "Costa Rica",
+    photo: fotoAnabellyTinoco,
+    bio: [
+      "Máster en Bibliotecología y Estudios de la Información, énfasis en Tecnologías de la Información, Universidad de Costa Rica. Maestranda en Recursos Humanos y Gestión del Conocimiento, Licenciada en Bibliotecología y Documentación, Universidad Nacional.",
+      "Cuenta con experiencia en atención y formación de usuarios y en el desarrollo de procesos de alfabetización informacional, así como en la planificación, organización, gestión y administración de bibliotecas. Se ha desempeñado en cargos de coordinación y jefatura en bibliotecas especializadas y de facultad del Sistema de Bibliotecas y Centros de Información Documental de la Universidad Nacional.",
+      "Ha participado como ponente en congresos nacionales e internacionales. Actualmente es coordinadora de la biblioteca en la Sección Regional Central-Occidente, Alajuela.",
+    ],
   },
   {
     name: "Humberto Ravest",
-    institution: "Consultor en Gestión del Conocimiento",
-    country: "Chile / Perú",
+    institution: "Universidad Técnica Federico Santa María (USM)",
+    country: "Chile",
+    photo: fotoHumbertoRavest,
+    bio: [
+      "Reconocido internacionalmente como experto en gestión de bibliotecas, preservación documental y nuevas tecnologías. Exdirector de Información y Documentación Bibliográfica de la Universidad Técnica Federico Santa María (USM) en Chile.",
+      "Fundó en 2011 el Congreso Internacional de Bibliotecas Universitarias (CIBU), consolidado como un encuentro clave para el desarrollo tecnológico de los centros de información en América Latina.",
+    ],
   },
-  { name: "Jairo Hernán Díaz Arias", institution: "Mc Graw Hill / Libun", country: "Colombia" },
-  { name: "Jairo Ramírez Molina", institution: "Libun / Digital Content", country: "Colombia" },
-  { name: "Bernardo Rojas", institution: "Universidad de O'Higgins", country: "Chile" },
   {
-    name: "José Ignacio López Ramírez Gastón",
-    institution: "Open Science Community Perú",
+    name: "Karen Jara",
+    institution: "U. Católica de la Santísima Concepción",
+    country: "Chile",
+    photo: fotoKarenJara,
+    bio: [
+      "Bibliotecóloga documentalista por la Universidad de Playa Ancha y magíster en Educación por la Universidad Autónoma de Chile. En 2012 fue nombrada directora de Bibliotecas de la Universidad Católica de la Santísima Concepción, con objetivos como la incorporación de los Institutos Tecnológicos a la red de bibliotecas, el desarrollo de colecciones y la automatización de servicios.",
+      "En noviembre de 2024 fue reelecta como presidenta de CABID (Consejo Asesor de la Infraestructura Nacional de Acceso) para el periodo 2025-2026, con un plan que considera la creación de un repositorio nacional de buenas prácticas en ciencia abierta, modelos de digitalización cooperativa y cooperación con redes internacionales de bibliotecas.",
+    ],
+  },
+  {
+    name: "José Ignacio López Ramírez-Gastón",
+    institution: "U. Nacional de Música · OSCP",
+    country: "España",
+    photo: fotoJoseIgnacioLopez,
+    bio: [
+      "Doctor y Magíster en música por la University of California San Diego y Licenciado por el Departamento de Estudios Comparados de la Ohio State University (EE. UU.).",
+      "Actualmente está a cargo de la Dirección de Innovación y Transferencia Tecnológica y de la coordinación del Laboratorio de Música Electroacústica y Arte Sonoro de la Universidad Nacional de Música, desde donde fomenta el desarrollo, la práctica y la investigación en el campo de las artes sonoras relacionadas con el avance tecnológico-musical y la innovación. Fundador y Presidente de Open Science Community Peru.",
+    ],
+  },
+  {
+    name: "Ángel Revolledo Morán",
+    institution: "Especialista en Tecnología Educativa (EdTech)",
     country: "Perú",
+    photo: fotoAngelRevolledo,
+    bio: [
+      "Profesional orientado al desarrollo de negocios en el sector educativo, con experiencia comprobada en la comercialización de productos digitales y servicios bibliotecarios. Especialista en la identificación de oportunidades de mercado y el diseño de propuestas técnicas para el sector universitario.",
+      "Especialista en Tecnología Educativa (EdTech), con trayectoria brindando soluciones integrales a instituciones de educación superior: desde la prospección estratégica en facultades de pre y posgrado hasta la implementación de bibliotecas virtuales y ecosistemas digitales, enfocado en potenciar la calidad académica y la fidelización del cliente.",
+    ],
   },
-  { name: "Julio Santillán", institution: "Colectivo Open Access Perú", country: "Perú" },
-  { name: "David Quispe", institution: "CONCYTEC", country: "Perú" },
-  { name: "Alan Cáceres", institution: "RENATI", country: "Perú" },
-  { name: "Cecilia Alegre", institution: "ESAN CENDOC", country: "Perú" },
-  { name: "Oscar Pilco", institution: "ESAN CENDOC", country: "Perú" },
-  { name: "Celso Garzón", institution: "ITMS Group", country: "Perú" },
   {
-    name: "Yuneli Cueva Ríos",
-    institution: "Universidad Nacional Mayor de San Marcos",
+    name: "Celso Gonzáles Cam",
+    institution: "Universidad San Ignacio de Loyola",
     country: "Perú",
+    photo: fotoCelsoGonzales,
+    bio: [
+      "Magíster en Dirección de Tecnología de Información y Comunicaciones por la Universidad Politécnica de Cataluña (España) y la Universidad Peruana de Ciencias Aplicadas (Perú). Estudios de postgrado en Ingeniería de Software en la PUCP y Marketing Digital en la Universidad del Pacífico. Docente en la Universidad Nacional Mayor de San Marcos y licenciado de Ciencias de la Información por la PUCP.",
+      "Actualmente labora como jefe del Sistema de Bibliotecas de la Universidad San Ignacio de Loyola. Ha sido subdirector corporativo del Área de Tecnología de Información y Comunicaciones de la Universidad Científica del Sur, Universidad SISE e Instituto SISE, y webmaster en la Universidad del Pacífico y la UPC. Participó en programas de entrenamiento en la Universidad de Illinois (EE. UU.) y en desarrollo de bibliotecas digitales en la Universidad de Ceará (Brasil).",
+    ],
   },
   {
-    name: "Vania Namuche Zavaleta",
-    institution: "Universidad Nacional Mayor de San Marcos",
+    name: "Cecilia Alegre Castro",
+    institution: "Universidad ESAN",
     country: "Perú",
+    photo: fotoCeciliaAlegre,
+    bio: ["Jefe de Biblioteca y Centro de Información de la Universidad ESAN."],
   },
   {
-    name: "Valeryn Namuche Zavaleta",
-    institution: "Universidad Nacional Mayor de San Marcos",
+    name: "David Quispe Riveros",
+    institution: "CONCYTEC",
     country: "Perú",
+    photo: fotoDavidQuispe,
+    bio: [
+      "Profesional de la especialidad de Bibliotecología y Ciencias de la Información, con estudios concluidos en la Maestría en Gestión de la Información y del Conocimiento por la Universidad Nacional Mayor de San Marcos.",
+      "Cuenta con experiencia en la gestión de información, comunicación científica, plataformas y gestores de contenido digitales, así como en el registro, valoración y preservación del patrimonio documental bibliográfico. Fue miembro alterno del comité del portal SciELO Perú y actualmente labora como Analista en Repositorios Digitales en la Subdirección de Gestión de Información y Conocimiento del CONCYTEC.",
+    ],
   },
   {
-    name: "Rocío Aponte",
-    institution: "Universidad Nacional Mayor de San Marcos",
+    name: "Elizabeth Huisa Veria",
+    institution: "Escuela de Bibliotecología — UNMSM",
     country: "Perú",
-  },
-  { name: "Henry Chávez", institution: "Colegio de Bibliotecólogos del Perú", country: "Perú" },
-  {
-    name: "Anabelly Tinoco Altamirano",
-    institution: "Universidad Nacional, Campus Omar Dengo",
-    country: "Costa Rica",
-  },
-  {
-    name: "Ivannia Conejo Chinchilla",
-    institution: "Universidad Nacional, Campus Omar Dengo",
-    country: "Costa Rica",
-  },
-  { name: "Karina Vargas García", institution: "Universidad Castro Carazo", country: "Costa Rica" },
-  {
-    name: "Fabiola Arguedas Segura",
-    institution: "Universidad Castro Carazo",
-    country: "Costa Rica",
-  },
-  {
-    name: "Estefany Navarro Barquero",
-    institution: "Universidad Castro Carazo",
-    country: "Costa Rica",
-  },
-  { name: "Ángela Clemencia Serna", institution: "CEIPA", country: "Colombia" },
-  { name: "Huber Gómez", institution: "Support Pro Consulting", country: "Colombia" },
-  {
-    name: "Anderson Julián Murillo Ortega",
-    institution: "Universidad de Investigación y Desarrollo (UDI)",
-    country: "Colombia",
-  },
-  {
-    name: "Sebastián Alejandro Castro Pinzón",
-    institution: "Universidad de Investigación y Desarrollo (UDI)",
-    country: "Colombia",
-  },
-  {
-    name: "Sandra Milena Afanador Báez",
-    institution: "Universidad de Investigación y Desarrollo (UDI)",
-    country: "Colombia",
-  },
-  {
-    name: "Lizbleydi Yarith Aparicio Solano",
-    institution: "Universidad de Investigación y Desarrollo (UDI)",
-    country: "Colombia",
+    photo: fotoElizabethHuisa,
+    bio: [
+      "Doctora en Educación de la Universidad San Martín de Porres, Maestra en Administración de Negocios de la Universidad Ricardo Palma, Bachiller y Licenciada en Bibliotecología y Ciencias de la Información de la UNMSM. Se desempeña como Directora y responsable del proceso de acreditación de la Escuela Profesional de Bibliotecología y Ciencias de la Información de la UNMSM desde 2019 y como Jefe de la Oficina de Calidad y Acreditación de la Facultad de Letras y Ciencias Humanas.",
+      "Investigadora reconocida por el Renacyt — Concytec desde 2017 y docente investigadora reconocida por la UNMSM desde 2021. Evaluadora externa de proyectos de la Red IDi a nivel nacional y miembro del Grupo de Educación Bibliotecológica del IIBI. Ha expuesto en conferencias internacionales organizadas por universidades de Argentina, Brasil, Chile, México y España.",
+    ],
   },
   {
     name: "Jesús Miguel Ipanaqué Peña",
-    institution: "Universidad Privada del Norte",
+    institution: "Repositorios de Acceso Abierto",
     country: "Perú",
+    photo: fotoJesusIpanaque,
+    bio: [
+      "Especialista en Gestión de la Información con más de 15 años de experiencia en la implementación, optimización y escalabilidad de Repositorios Institucionales de Acceso Abierto.",
+      "Experto en normalización de metadatos (Dublin Core, MARC 21) y aseguramiento de la calidad bajo estándares de RENATI-SUNEDU y ALICIA-CONCYTEC. Líder de equipos técnicos con enfoque en la visibilidad del impacto científico y la transformación digital de unidades de información.",
+    ],
   },
-  { name: "Ángel Revolledo Morán", institution: "Mc Graw Hill / Libun", country: "Perú" },
   {
     name: "Marlene Benavides",
-    institution: "Fundación del Libro Universitario — Libun",
+    institution: "Fundación del Libro Universitario — LIBUN",
     country: "Perú",
+    photo: fotoMarleneBenavides,
+    bio: [
+      "Directora ejecutiva de la Fundación del Libro Universitario — LIBUN. Desde hace más de dos décadas trabaja junto a universidades, bibliotecas y comunidades académicas de todo el país, acompañando sus esfuerzos por acercar el conocimiento a más estudiantes y docentes.",
+      "Administradora de empresas, con estudios de especialización en liderazgo, coaching transformacional, desarrollo de competencias profesionales y gestión de equipos. Ha liderado iniciativas orientadas al fortalecimiento de bibliotecas académicas, la transformación digital de los servicios de información y la generación de alianzas estratégicas con instituciones de educación superior.",
+    ],
   },
-  { name: "Raúl Manco", institution: "eLibro", country: "Perú" },
-  { name: "Conferencista invitado", institution: "eLibro — Charla Magistral", country: "EE. UU." },
+  {
+    name: "Modesto Montoya Zavaleta",
+    institution: "Universidad Nacional de Ingeniería",
+    country: "Perú",
+    photo: fotoModestoMontoya,
+    bio: [
+      "Doctor en Gobierno y Política Pública (USMP, 2012), Doctor de Estado en ciencias físicas (1981) y Doctor de Tercer Ciclo en física nuclear y de partículas (1977) por la Universidad París XI, Francia. Licenciado, Magíster y Bachiller en física por la UNI.",
+      "Miembro de la Academia Nacional de Ciencias del Perú y presidente de la Academia Nuclear del Perú. Ex presidente del Instituto Peruano de Energía Nuclear (IPEN) y de la Sociedad Peruana de Física. Fundador y coordinador del Encuentro Científico Internacional (ECI). Profesor principal de la Facultad de Ciencias de la UNI y divulgador científico.",
+    ],
+  },
+  {
+    name: "Oscar Pilco",
+    institution: "Universidad ESAN",
+    country: "Perú",
+    photo: fotoOscarPilco,
+    bio: [
+      "Bibliotecólogo por la Universidad Nacional Mayor de San Marcos (UNMSM). Actualmente se desempeña en la Universidad ESAN, donde coordina los servicios de información para el área de Pregrado.",
+      "Su labor se centra en el desarrollo de iniciativas que fortalecen la alfabetización informacional, la formación académica y el apoyo a la investigación universitaria.",
+    ],
+  },
+  {
+    name: "Vania Namuche Zavaleta",
+    institution: "Universidad Privada Antenor Orrego",
+    country: "Perú",
+    photo: fotoVaniaNamuche,
+    bio: [
+      "Magíster en Gestión Tecnológica Empresarial de la Universidad Nacional de Ingeniería, Licenciada en Bibliotecología y Ciencias de la Información de la UNMSM y egresada de la Maestría en Docencia Universitaria de la misma casa de estudios.",
+      "Ha colaborado con organismos públicos en proyectos de fortalecimiento técnico y capacitaciones sobre organización de archivos. Actualmente labora como jefa de la biblioteca de la Universidad Privada Antenor Orrego. Cuenta con reconocimiento del Congreso de la República por su labor en la promoción de la lectura (2022).",
+    ],
+  },
+  {
+    name: "Rocio Aponte Castro",
+    institution: "Red de Bibliotecas en Ciencias de la Salud",
+    country: "Perú",
+    photo: fotoRocioAponte,
+    bio: [
+      "Licenciada en Bibliotecología y Ciencias de la Información por la UNMSM y egresada de la Maestría en Gestión de la Información y del Conocimiento de la misma universidad. Con diplomados en Administración, Gestión de la Calidad en Instituciones Educativas y Habilidades Gerenciales.",
+      "Especialista en gestión de bibliotecas universitarias y especializadas con más de 20 años de experiencia. Ha desarrollado líneas de investigación en bebetecas, procesos, acreditación, alfabetización informacional y revisiones sistemáticas, y se ha desempeñado como líder coordinadora de la Red de Bibliotecas Peruanas en Ciencias de la Salud.",
+    ],
+  },
+  {
+    name: "Valeryn Namuche Zavaleta",
+    institution: "Anomiart — Gestión Cultural",
+    country: "Perú",
+    photo: fotoValerynNamuche,
+    bio: [
+      "Socióloga y gestora cultural peruana, actualmente estudiante de la Maestría en Política Social con mención en Gestión de Proyectos Sociales en la UNMSM. Es directora de Anomiart, espacio dedicado a la gestión cultural, la formulación de proyectos socioculturales, la investigación aplicada y el fortalecimiento de capacidades para agentes culturales.",
+      "Cuenta con experiencia en mediación lectora, recuperación editorial, monitoreo de proyectos y diseño de iniciativas culturales con enfoque social. Ha participado en proyectos ganadores de fondos del Ministerio de Cultura, entre ellos “Culturalia” (Estímulos Económicos para la Cultura 2025).",
+    ],
+  },
 ];
 
 function Index() {
+  const [ponente, setPonente] = useState<Expositor | null>(null);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -593,45 +727,70 @@ function Index() {
             Voces de Latinoamérica y más allá.
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Profesionales e investigadores de Perú, Chile, Colombia, Costa Rica y EE. UU.
-            confirmados para el VIII CIBU 2026. Las fotografías se publicarán próximamente.
+            Profesionales e investigadores de Perú, Chile, Colombia, Costa Rica y España confirmados
+            para el VIII CIBU 2026. Haz clic en cada ponente para conocer su trayectoria.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {expositores.map((e, i) => (
-            <div
+            <button
               key={i}
-              className="bg-card border border-border rounded-2xl p-6 hover:border-[var(--gold)] transition flex gap-4"
+              type="button"
+              onClick={() => setPonente(e)}
+              className="text-left bg-card border border-border rounded-2xl p-6 hover:border-[var(--gold)] transition flex gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)]"
             >
-              <div
-                className="w-14 h-14 shrink-0 rounded-full flex items-center justify-center font-display font-bold text-lg text-[var(--gold-foreground)]"
-                style={{ background: "var(--gradient-gold)" }}
-              >
-                {e.name
-                  .split(" ")
-                  .filter((w) => w[0] && w[0] === w[0].toUpperCase())
-                  .slice(0, 2)
-                  .map((w) => w[0])
-                  .join("")}
-              </div>
+              <img
+                src={e.photo}
+                alt={`Foto de ${e.name}`}
+                loading="lazy"
+                className="w-16 h-16 shrink-0 rounded-full object-cover border border-border"
+              />
               <div className="min-w-0">
                 <div className="font-semibold leading-tight">{e.name}</div>
                 <div className="text-sm text-muted-foreground mt-1 leading-snug">
                   {e.institution}
                 </div>
-                {e.country && (
-                  <div className="text-xs uppercase tracking-wider text-[var(--gold)] mt-2 font-semibold">
-                    {e.country}
-                  </div>
-                )}
+                <div className="text-xs uppercase tracking-wider text-[var(--gold)] mt-2 font-semibold">
+                  {e.country}
+                </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
         <p className="text-center text-sm text-muted-foreground mt-10 italic">
           Lista preliminar · sujeta a confirmaciones y nuevas incorporaciones.
         </p>
       </section>
+
+      <Dialog open={!!ponente} onOpenChange={(open) => !open && setPonente(null)}>
+        <DialogContent className="max-w-xl max-h-[85vh] overflow-y-auto">
+          {ponente && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-4 text-left">
+                  <img
+                    src={ponente.photo}
+                    alt={`Foto de ${ponente.name}`}
+                    className="w-20 h-20 shrink-0 rounded-full object-cover border border-border"
+                  />
+                  <div className="min-w-0">
+                    <DialogTitle className="text-xl">{ponente.name}</DialogTitle>
+                    <DialogDescription className="mt-1">{ponente.institution}</DialogDescription>
+                    <div className="text-xs uppercase tracking-wider text-[var(--gold)] mt-2 font-semibold">
+                      {ponente.country}
+                    </div>
+                  </div>
+                </div>
+              </DialogHeader>
+              <div className="space-y-3 text-sm text-muted-foreground leading-relaxed text-left">
+                {ponente.bio.map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ))}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* SPONSORS */}
       <section id="sponsors" className="bg-secondary/40 py-20 border-t border-border">
@@ -642,14 +801,15 @@ function Index() {
             </div>
             <h2 className="font-display text-4xl">Con el respaldo de.</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-4">
             {sponsors.map((s) => {
-              const cardClass = `border border-border rounded-xl px-6 py-8 flex items-center justify-center hover:border-[var(--gold)] transition min-h-[140px] ${s.dark ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`;
+              const featured = "featured" in s && s.featured;
+              const cardClass = `border border-border rounded-xl flex items-center justify-center hover:border-[var(--gold)] transition max-w-full ${featured ? "h-32 px-10" : "h-24 px-8"} ${s.dark ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`;
               const inner = (
                 <img
                   src={s.logo}
                   alt={`${s.name} logo`}
-                  className="max-h-16 max-w-full object-contain"
+                  className={`${featured ? "h-20 max-w-[420px]" : "h-14 max-w-[340px]"} w-auto object-contain`}
                   loading="lazy"
                 />
               );

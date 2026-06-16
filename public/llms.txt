@@ -4,7 +4,8 @@
 
 ## Pages
 
-- [Inicio](/): Visión general del congreso, ejes temáticos, convocatoria, fechas clave y auspiciadores.
+- [Inicio](/): Visión general del congreso, ejes temáticos, convocatoria, fechas clave, ponentes y auspiciadores.
+- [Programa](/programa): Cronograma del congreso por día, talleres, conferencias y ponentes.
 - [Inscripción](/registro): Beneficios, métodos de pago (Yape y transferencia) y formulario de inscripción.
 
 ## Optional

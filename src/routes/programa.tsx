@@ -78,7 +78,7 @@ const days: Day[] = [
       {
         time: "16:00 – 17:30",
         kind: "Taller 4",
-        title: "Título por confirmar",
+        title: "Inteligencia Artificial para la Investigación Académica",
         speaker: "Lic. Oscar Pilco",
         institution: "ESAN CENDOC",
       },
