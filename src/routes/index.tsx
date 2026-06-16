@@ -337,8 +337,9 @@ function Index() {
       <SiteHeader />
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+        {/* Foto a la derecha, fundida con el azul (desktop) */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-[45%]">
           <img
             src={heroImg}
             alt=""
@@ -352,64 +353,72 @@ function Index() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(135deg, oklch(0.15 0.05 260 / 0.92), oklch(0.18 0.06 270 / 0.78))",
+                "linear-gradient(90deg, #0056a3 0%, rgba(0,86,163,0.6) 26%, rgba(0,86,163,0) 62%)",
             }}
           />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(180deg, rgba(0,40,90,0.2), rgba(0,40,90,0.4))" }}
+          />
         </div>
-        <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-32 md:pt-32 md:pb-40 text-white">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 backdrop-blur text-xs uppercase tracking-widest mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" /> 13–16 julio · Trujillo,
-            Perú
-          </div>
-          <h1 className="font-display text-5xl md:text-7xl leading-[1.05] max-w-4xl">
-            Bibliotecas e{" "}
-            <span className="italic" style={{ color: "var(--gold)" }}>
-              IA
-            </span>
-            :
-            <br /> construyendo futuros posibles.
-          </h1>
-          <p className="mt-6 text-lg md:text-xl max-w-2xl text-white/80 leading-relaxed">
-            VIII Congreso Internacional de Bibliotecas Universitarias. Del acceso al conocimiento a
-            la preservación de la memoria cultural.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/registro"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
-              style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
-            >
-              Inscribirme al congreso <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              to="/programa"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition"
-            >
-              <Calendar className="w-4 h-4" /> Ver programa
-            </Link>
-            <a
-              href="#convocatoria"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition"
-            >
-              Convocatoria de trabajos
-            </a>
-          </div>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
-            {[
-              { icon: Calendar, k: "4 días", v: "de congreso" },
-              { icon: MapPin, k: "UPAO", v: "Trujillo, Perú" },
-              { icon: Users, k: "Internacional", v: "Latam + España" },
-              { icon: FileText, k: "5 ejes", v: "temáticos" },
-            ].map((s, i) => (
-              <div key={i} className="border-l border-white/20 pl-4">
-                <s.icon className="w-5 h-5 mb-2" style={{ color: "var(--gold)" }} />
-                <div className="font-display text-2xl">{s.k}</div>
-                <div className="text-xs uppercase tracking-wider text-white/60">{s.v}</div>
-              </div>
-            ))}
+
+        <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-28 md:pt-32 md:pb-36 text-white">
+          <div className="lg:max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 backdrop-blur text-xs uppercase tracking-widest mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" /> 13–16 julio · Trujillo,
+              Perú
+            </div>
+            <h1 className="font-display text-5xl md:text-7xl leading-[1.05]">
+              Bibliotecas e{" "}
+              <span className="italic" style={{ color: "var(--gold)" }}>
+                IA
+              </span>
+              :
+              <br /> construyendo futuros posibles.
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">
+              VIII Congreso Internacional de Bibliotecas Universitarias. Del acceso al conocimiento
+              a la preservación de la memoria cultural.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                to="/registro"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-[var(--gold-foreground)] hover:opacity-90 transition"
+                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+              >
+                Inscribirme al congreso <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/programa"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition"
+              >
+                <Calendar className="w-4 h-4" /> Ver programa
+              </Link>
+              <a
+                href="#convocatoria"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-medium border border-white/30 hover:bg-white/10 transition"
+              >
+                Convocatoria de trabajos
+              </a>
+            </div>
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { icon: Calendar, k: "4 días", v: "de congreso" },
+                { icon: MapPin, k: "UPAO", v: "Trujillo, Perú" },
+                { icon: Users, k: "Internacional", v: "Latam + España" },
+                { icon: FileText, k: "5 ejes", v: "temáticos" },
+              ].map((s, i) => (
+                <div key={i} className="border-l border-white/20 pl-4">
+                  <s.icon className="w-5 h-5 mb-2" style={{ color: "var(--gold)" }} />
+                  <div className="font-display text-2xl">{s.k}</div>
+                  <div className="text-xs uppercase tracking-wider text-white/60">{s.v}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* BANNER */}
       <section className="bg-white border-b border-border">
@@ -427,9 +436,8 @@ function Index() {
           />
         </div>
       </section>
-
-      {/* VIDEO */}
-      <section id="video" className="bg-secondary/40 border-y border-border py-12 md:py-20">
+ {/* VIDEO */}
+ <section id="video" className="bg-secondary/40 border-y border-border py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 md:mb-10">
             <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">
@@ -448,16 +456,19 @@ function Index() {
               minHeight: "200px",
             }}
           >
-            <iframe
-              src="https://drive.google.com/file/d/1-pmbYq9E7438YAzSl-dHAGVM_etRzarx/preview"
+            <video
+              src="https://res.cloudinary.com/dnsjgx792/video/upload/v1781587170/WhatsApp_Video_2026-06-16_at_00.55.59_k990ie.mp4"
               title="Video oficial VIII CIBU 2026"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
+              controls
+              playsInline
+              preload="metadata"
               className="absolute inset-0 w-full h-full"
             />
           </div>
         </div>
       </section>
+
+   
 
       {/* SOBRE */}
       <section id="sobre" className="max-w-6xl mx-auto px-6 py-24">
@@ -676,7 +687,38 @@ function Index() {
           </p>
         </div>
       </section>
-
+   {/* VIDEO 2 */}
+   <section id="video" className="bg-secondary/40 border-y border-border py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 md:mb-10">
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">
+              Video
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl">Conoce el VIII CIBU 2026.</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm md:text-base">
+              Mira el video oficial de invitación al congreso.
+            </p>
+          </div>
+          <div
+            className="relative w-full overflow-hidden rounded-lg md:rounded-2xl border border-border bg-black"
+            style={{
+              aspectRatio: "16 / 9",
+              boxShadow: "var(--shadow-elegant)",
+              minHeight: "200px",
+            }}
+          >
+            <iframe
+              src="https://drive.google.com/file/d/1-pmbYq9E7438YAzSl-dHAGVM_etRzarx/preview"
+              title="Video oficial VIII CIBU 2026"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+     
+     
       {/* CTA PROGRAMA */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <div
