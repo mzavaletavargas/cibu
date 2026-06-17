@@ -98,8 +98,7 @@ function Registro() {
             Asegura tu lugar en el VIII CIBU 2026.
           </h1>
           <p className="mt-5 text-lg text-white/80 max-w-2xl">
-            Completa tu inscripción en 3 pasos: revisa los beneficios, realiza el pago y registra
-            tus datos.
+            Completa tu inscripción en 4 pasos: revisa los beneficios, conoce los costos, realiza el pago y registra tus datos.
           </p>
         </div>
       </section>
@@ -113,7 +112,7 @@ function Registro() {
           <div className="flex items-baseline justify-between flex-wrap gap-4 mb-8">
             <h2 className="font-display text-3xl">Tu inscripción incluye</h2>
             <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold">
-              Paso 1 de 3
+              Paso 1 de 4
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -133,12 +132,65 @@ function Registro() {
         </div>
       </section>
 
+      {/* PRECIOS */}
+      <section className="max-w-5xl mx-auto px-6 py-20">
+        <div className="flex items-baseline justify-between flex-wrap gap-4 mb-8">
+          <h2 className="font-display text-3xl md:text-4xl">Costos de inscripción</h2>
+          <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold">
+            Paso 2 de 4
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Conferencias */}
+          <div className="bg-card border border-border rounded-2xl p-8 hover:border-[var(--gold)] transition">
+            <h3 className="font-display text-2xl mb-2">Conferencias</h3>
+            <p className="text-sm text-muted-foreground mb-6">14 – 16 de julio de 2026</p>
+            <div className="space-y-4">
+              <div className="pb-4 border-b border-border">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                  Perú (con DNI o RUC)
+                </div>
+                <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
+                <div className="text-xs text-muted-foreground mt-1">+ IVA</div>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                  Extranjero
+                </div>
+                <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Talleres */}
+          <div className="bg-card border border-border rounded-2xl p-8 hover:border-[var(--gold)] transition">
+            <h3 className="font-display text-2xl mb-2">Talleres</h3>
+            <p className="text-sm text-muted-foreground mb-6">13 de julio de 2026</p>
+            <div className="space-y-4">
+              <div className="pb-4 border-b border-border">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                  Perú (con DNI o RUC)
+                </div>
+                <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
+                <div className="text-xs text-muted-foreground mt-1">+ IVA</div>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                  Extranjero
+                </div>
+                <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PAGO */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="flex items-baseline justify-between flex-wrap gap-4 mb-8">
           <h2 className="font-display text-3xl md:text-4xl">Métodos de pago</h2>
           <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold">
-            Paso 2 de 3
+            Paso 3 de 4
           </div>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -207,7 +259,7 @@ function Registro() {
               Importante: registra tu inscripción
             </h3>
             <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold">
-              Paso 3 de 3
+              Paso 4 de 4
             </div>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-6">
