@@ -141,7 +141,7 @@ const days: Day[] = [
         time: "14:00 – 14:30",
         kind: "Conferencia 4",
         title: "Repositorio institucional y el cumplimiento de la guía Alicia (última versión)",
-        speaker: "David Quispe",
+        speaker: "David Quispe — Representante de CONCYTEC, por confirmar",
         institution: "Consejo Nacional de Ciencia, Tecnología e Innovación",
       },
       {

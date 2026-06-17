@@ -116,7 +116,23 @@ function Registro() {
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {beneficios.map((b, i) => (
+            {[
+              {
+                icon: Users,
+                title: "Certificado oficial",
+                desc: "Certificado de participación emitido por la organización del CIBU.",
+              },
+              {
+                icon: Award,
+                title: "Factura comprobante",
+                desc: "Se emitirá factura comprobante oficial por tu inscripción.",
+              },
+              {
+                icon: Backpack,
+                title: "Portal de inscripciones",
+                desc: "Acceso a un portal dedicado para gestionar tu registro y documentación.",
+              },
+            ].map((b, i) => (
               <div key={i} className="text-center">
                 <div
                   className="w-14 h-14 rounded-2xl mx-auto flex items-center justify-center mb-4"
@@ -145,13 +161,13 @@ function Registro() {
           <div className="bg-card border border-border rounded-2xl p-8 hover:border-[var(--gold)] transition">
             <h3 className="font-display text-2xl mb-2">Conferencias</h3>
             <p className="text-sm text-muted-foreground mb-6">14 – 16 de julio de 2026</p>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-6">
               <div className="pb-4 border-b border-border">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                   Perú (con DNI o RUC)
                 </div>
                 <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
-                <div className="text-xs text-muted-foreground mt-1">+ IVA</div>
+                <div className="text-xs text-muted-foreground mt-1">+ IGV</div>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -160,19 +176,38 @@ function Registro() {
                 <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
               </div>
             </div>
+            <div className="border-t border-border pt-4">
+              <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold mb-3">
+                Incluye
+              </div>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--gold)] mt-0.5">•</span>
+                  <span>Acceso a las 4 jornadas del congreso y feria tecnológica</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--gold)] mt-0.5">•</span>
+                  <span>Material para apuntes y objetos promocionales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--gold)] mt-0.5">•</span>
+                  <span>Certificado oficial de participación</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Talleres */}
           <div className="bg-card border border-border rounded-2xl p-8 hover:border-[var(--gold)] transition">
             <h3 className="font-display text-2xl mb-2">Talleres</h3>
             <p className="text-sm text-muted-foreground mb-6">13 de julio de 2026</p>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-6">
               <div className="pb-4 border-b border-border">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                   Perú (con DNI o RUC)
                 </div>
                 <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
-                <div className="text-xs text-muted-foreground mt-1">+ IVA</div>
+                <div className="text-xs text-muted-foreground mt-1">+ IGV</div>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -180,6 +215,25 @@ function Registro() {
                 </div>
                 <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
               </div>
+            </div>
+            <div className="border-t border-border pt-4">
+              <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold mb-3">
+                Incluye
+              </div>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--gold)] mt-0.5">•</span>
+                  <span>Material para apuntes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--gold)] mt-0.5">•</span>
+                  <span>Acceso liberado a todas las conferencias</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--gold)] mt-0.5">•</span>
+                  <span>Certificado oficial de participación</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
