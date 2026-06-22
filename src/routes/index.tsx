@@ -183,28 +183,31 @@ const expositores: Expositor[] = [
   },
   {
     name: "Humberto Ravest",
-    institution: "Universidad Técnica Federico Santa María (USM)",
-    country: "Chile",
+    institution: "Consultor en Gestión del Conocimiento",
+    country: "Chile / Perú",
     photo: fotoHumbertoRavest,
     bio: [
       "Reconocido internacionalmente como experto en gestión de bibliotecas, preservación documental y nuevas tecnologías. Exdirector de Información y Documentación Bibliográfica de la Universidad Técnica Federico Santa María (USM) en Chile.",
+      "Es ingeniero electrónico, master coach en Programación Neurolingüística y experto en técnicas de meditación y concentración.",
       "Fundó en 2011 el Congreso Internacional de Bibliotecas Universitarias (CIBU), consolidado como un encuentro clave para el desarrollo tecnológico de los centros de información en América Latina.",
     ],
   },
   {
     name: "Karen Jara",
-    institution: "U. Católica de la Santísima Concepción",
+    institution: "Universidad de Concepción",
     country: "Chile",
     photo: fotoKarenJara,
     bio: [
-      "Bibliotecóloga documentalista por la Universidad de Playa Ancha y magíster en Educación por la Universidad Autónoma de Chile. En 2012 fue nombrada directora de Bibliotecas de la Universidad Católica de la Santísima Concepción, con objetivos como la incorporación de los Institutos Tecnológicos a la red de bibliotecas, el desarrollo de colecciones y la automatización de servicios.",
-      "En noviembre de 2024 fue reelecta como presidenta de CABID (Consejo Asesor de la Infraestructura Nacional de Acceso) para el periodo 2025-2026, con un plan que considera la creación de un repositorio nacional de buenas prácticas en ciencia abierta, modelos de digitalización cooperativa y cooperación con redes internacionales de bibliotecas.",
+      "Bibliotecóloga documentalista por la Universidad de Playa Ancha. También posee el grado de magíster en Educación por la Universidad Autónoma de Chile. El 24 de septiembre de 2012 fue nombrada directora de Bibliotecas de la Universidad Católica de la Santísima Concepción.",
+      "Posteriormente asumió como directora del Sistema de Bibliotecas de la Universidad de Concepción.",
+      "En noviembre de 2024 fue reelecta como presidenta de CABID (Consejo Asesor de la Infraestructura Nacional de Acceso) para el periodo 2025-2026. El plan de trabajo de la comisión para dicho periodo consideró la creación de un repositorio nacional de buenas prácticas en ciencia abierta, modelos de digitalización cooperativa y cooperación con redes internacionales de bibliotecas.",
+      "Ha sido elegida como nueva integrante del Consejo Comunitario de FOLIO, plataforma de gestión bibliotecaria de código abierto utilizada por instituciones de todo el mundo.",
     ],
   },
   {
     name: "José Ignacio López Ramírez-Gastón",
-    institution: "U. Nacional de Música · OSCP",
-    country: "España",
+    institution: "Universidad Nacional Daniel Alomia Robles · OSCP",
+    country: "Perú",
     photo: fotoJoseIgnacioLopez,
     bio: [
       "Doctor y Magíster en música por la University of California San Diego y Licenciado por el Departamento de Estudios Comparados de la Ohio State University (EE. UU.).",
@@ -213,22 +216,23 @@ const expositores: Expositor[] = [
   },
   {
     name: "Ángel Revolledo Morán",
-    institution: "Especialista en Tecnología Educativa (EdTech)",
+    institution: "McGraw Hill Education",
     country: "Perú",
     photo: fotoAngelRevolledo,
     bio: [
       "Profesional orientado al desarrollo de negocios en el sector educativo, con experiencia comprobada en la comercialización de productos digitales y servicios bibliotecarios. Especialista en la identificación de oportunidades de mercado y el diseño de propuestas técnicas para el sector universitario.",
-      "Especialista en Tecnología Educativa (EdTech), con trayectoria brindando soluciones integrales a instituciones de educación superior: desde la prospección estratégica en facultades de pre y posgrado hasta la implementación de bibliotecas virtuales y ecosistemas digitales, enfocado en potenciar la calidad académica y la fidelización del cliente.",
+      "Con una Maestría en Manejo y Conservación de Recursos Naturales y Biodiversidad en la CATIE de Costa Rica; en Finanzas e Inversiones Internacionales en la Universidad San Martín de Porres; y en Educación Superior e Investigación en la Universidad Científica del Sur.",
+      "Profesional con experiencia en liderazgo de equipos de alto desempeño, impulso de procesos e impulsión a la toma de decisiones que contribuyan al crecimiento y fortalecimiento institucional.",
     ],
   },
   {
     name: "Celso Gonzáles Cam",
-    institution: "Universidad San Ignacio de Loyola",
+    institution: "Universidad de San Martín de Porres",
     country: "Perú",
     photo: fotoCelsoGonzales,
     bio: [
       "Magíster en Dirección de Tecnología de Información y Comunicaciones por la Universidad Politécnica de Cataluña (España) y la Universidad Peruana de Ciencias Aplicadas (Perú). Estudios de postgrado en Ingeniería de Software en la PUCP y Marketing Digital en la Universidad del Pacífico. Docente en la Universidad Nacional Mayor de San Marcos y licenciado de Ciencias de la Información por la PUCP.",
-      "Actualmente labora como jefe del Sistema de Bibliotecas de la Universidad San Ignacio de Loyola. Ha sido subdirector corporativo del Área de Tecnología de Información y Comunicaciones de la Universidad Científica del Sur, Universidad SISE e Instituto SISE, y webmaster en la Universidad del Pacífico y la UPC. Participó en programas de entrenamiento en la Universidad de Illinois (EE. UU.) y en desarrollo de bibliotecas digitales en la Universidad de Ceará (Brasil).",
+      "Actualmente labora como jefe de la Biblioteca de la Facultad de Comunicaciones, Turismo y Psicología de la Universidad de San Martín de Porres – Campus Surquillo. Ha sido subdirector corporativo del Área de Tecnología de Información y Comunicaciones de la Universidad Científica del Sur, Universidad SISE e Instituto SISE, y webmaster en la Universidad del Pacífico y la UPC. Participó en programas de entrenamiento en la Universidad de Illinois (EE. UU.) y en desarrollo de bibliotecas digitales en la Universidad de Ceará (Brasil).",
     ],
   },
   {
@@ -237,16 +241,6 @@ const expositores: Expositor[] = [
     country: "Perú",
     photo: fotoCeciliaAlegre,
     bio: ["Jefe de Biblioteca y Centro de Información de la Universidad ESAN."],
-  },
-  {
-    name: "David Quispe Riveros",
-    institution: "CONCYTEC",
-    country: "Perú",
-    photo: fotoDavidQuispe,
-    bio: [
-      "Profesional de la especialidad de Bibliotecología y Ciencias de la Información, con estudios concluidos en la Maestría en Gestión de la Información y del Conocimiento por la Universidad Nacional Mayor de San Marcos.",
-      "Cuenta con experiencia en la gestión de información, comunicación científica, plataformas y gestores de contenido digitales, así como en el registro, valoración y preservación del patrimonio documental bibliográfico. Fue miembro alterno del comité del portal SciELO Perú y actualmente labora como Analista en Repositorios Digitales en la Subdirección de Gestión de Información y Conocimiento del CONCYTEC.",
-    ],
   },
   {
     name: "Elizabeth Huisa Veria",
@@ -260,10 +254,11 @@ const expositores: Expositor[] = [
   },
   {
     name: "Jesús Miguel Ipanaqué Peña",
-    institution: "Repositorios de Acceso Abierto",
+    institution: "Universidad Privada del Norte",
     country: "Perú",
     photo: fotoJesusIpanaque,
     bio: [
+      "Gestor del Repositorio Institucional Universidad Privada del Norte · Estratega en Gestión de la Información con más de 15 años de experiencia especializada.",
       "Especialista en Gestión de la Información con más de 15 años de experiencia en la implementación, optimización y escalabilidad de Repositorios Institucionales de Acceso Abierto.",
       "Experto en normalización de metadatos (Dublin Core, MARC 21) y aseguramiento de la calidad bajo estándares de RENATI-SUNEDU y ALICIA-CONCYTEC. Líder de equipos técnicos con enfoque en la visibilidad del impacto científico y la transformación digital de unidades de información.",
     ],
