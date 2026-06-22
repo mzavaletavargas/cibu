@@ -378,7 +378,7 @@ function ProgramaPage() {
             2026
           </h1>
           <p className="mt-6 text-lg md:text-xl max-w-2xl text-white/80 leading-relaxed">
-            Cuatro días de talleres, conferencias y mesas redondas, más una jornada cultural, entre
+            Cuatro días de talleres (con cupos limitados), conferencias y mesas redondas, más una jornada cultural, entre
             el 13 y el 17 de julio en Trujillo, Perú.
           </p>
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/80">
