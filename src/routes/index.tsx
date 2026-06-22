@@ -52,6 +52,7 @@ import fotoOscarPilco from "@/assets/ponentes/oscar-pilco.jpeg";
 import fotoVaniaNamuche from "@/assets/ponentes/vania-namuche.jpeg";
 import fotoRocioAponte from "@/assets/ponentes/rocio-aponte.jpg";
 import fotoValerynNamuche from "@/assets/ponentes/valeryn-namuche.jpg";
+import fotoBernardoRojas from "@/assets/ponentes/bernardo-rojas.jpg";
 import {
   Sparkles,
   Network,
@@ -202,6 +203,18 @@ const expositores: Expositor[] = [
       "Posteriormente asumió como directora del Sistema de Bibliotecas de la Universidad de Concepción.",
       "En noviembre de 2024 fue reelecta como presidenta de CABID (Consejo Asesor de la Infraestructura Nacional de Acceso) para el periodo 2025-2026. El plan de trabajo de la comisión para dicho periodo consideró la creación de un repositorio nacional de buenas prácticas en ciencia abierta, modelos de digitalización cooperativa y cooperación con redes internacionales de bibliotecas.",
       "Ha sido elegida como nueva integrante del Consejo Comunitario de FOLIO, plataforma de gestión bibliotecaria de código abierto utilizada por instituciones de todo el mundo.",
+    ],
+  },
+  {
+    name: "Bernardo Rojas",
+    institution: "Universidad de O'Higgins",
+    country: "Chile",
+    photo: fotoBernardoRojas,
+    bio: [
+      "Bibliotecólogo y Licenciado en Ciencias de la Documentación por la Universidad de Playa Ancha, con diplomado en Diseño de Servicios por la Universidad del Desarrollo. Actualmente se desempeña como Jefe de la Unidad de Bibliotecas de la Universidad de O'Higgins, donde lidera procesos de gestión, innovación y fortalecimiento de los servicios de información en el ámbito de la educación superior.",
+      "Cuenta con una sólida trayectoria en la implementación de proyectos vinculados a tecnologías de la información, destacando su participación en equipos multidisciplinarios orientados al desarrollo de servicios bibliotecarios.",
+      "Ha ejercido docencia en áreas de alfabetización informacional y metodologías de búsqueda de información, así como asesorías especializadas en el desarrollo y mejora de sistemas de bibliotecas y centros de documentación.",
+      "En el ámbito de la articulación y liderazgo a nivel nacional, se ha desempeñado como Vicepresidente de la Comisión Asesora de Bibliotecas del Consejo de Rectoras y Rectores de las Universidades Chilenas (CRUCH). Actualmente, ejerce como Director Alterno de la Red Chilena de Revistas Científicas de Acceso Abierto de las Universidades del Estado de Chile, desde donde contribuye al fortalecimiento del ecosistema de comunicación científica.",
     ],
   },
   {
