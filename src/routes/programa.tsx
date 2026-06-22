@@ -106,19 +106,20 @@ const days: Day[] = [
         institution: "Autoridades de la institución y del congreso",
       },
       {
-        time: "09:00 – 10:00",
+        time: "08:30 – 09:30",
         kind: "Charla magistral 1",
         title: "Investigación y bibliotecas",
         speaker: "Modesto Montoya",
         institution: "Universidad Nacional de Ingeniería",
       },
       {
-        time: "10:05 – 10:35",
+        time: "09:35 – 10:05",
         kind: "Conferencia 1",
         title: "Alfabetización con IA en la Política Nacional de Transformación Digital",
-        speaker: "Elizabeth Huiza",
-        institution: "Escuela Profesional de Bibliotecología y Ciencias de la Información — UNMSM",
+        speaker: "Elizabeth Huisa",
+        institution: "Directora Escuela Profesional de Bibliotecología y Ciencias de la Información de la Universidad Nacional Mayor de San Marcos",
       },
+      { time: "10:10 – 10:35", kind: "Ceremonia Inaugural", title: "Palabras de bienvenida", institution: "Autoridades de la institución y del congreso" },
       { time: "10:35 – 11:05", title: "Coffee break", break: true },
       {
         time: "11:10 – 11:40",
@@ -140,9 +141,9 @@ const days: Day[] = [
       {
         time: "14:00 – 14:30",
         kind: "Conferencia 4",
-        title: "Repositorio institucional y el cumplimiento de la guía Alicia (última versión)",
-        speaker: "David Quispe — Representante de CONCYTEC, por confirmar",
-        institution: "Consejo Nacional de Ciencia, Tecnología e Innovación",
+        title: "Recursos virtuales de acceso abierto para docencia e investigación. Ebooks, bases de datos y licencias Creative Commons.",
+        speaker: "Ing. Humberto Ravest",
+        institution: "Consultor en Gestión del Conocimiento — Chile / Perú",
       },
       {
         time: "14:35 – 15:05",
@@ -162,17 +163,24 @@ const days: Day[] = [
       {
         time: "16:40 – 17:10",
         kind: "Conferencia 7",
-        title: "Título por confirmar",
+        title: "Avanzando hacia una cultura de Ciencia Abierta en la Universidad de O’Higgins",
         speaker: "Bernardo Rojas",
         institution: "Universidad de O’Higgins — Chile",
       },
       {
-        time: "17:20 – 18:20",
+        time: "17:15 – 17:45",
+        kind: "Conferencia",
+        title: "Copiloto Sustituto Plagio Algoritmos: Retos de la Inteligencia Artificial en la Educación Superior",
+        speaker: "Eduardo Alfaro",
+        institution: "Maskhay",
+      },
+      {
+        time: "17:55 – 18:55",
         kind: "Mesa redonda 1",
         title: "IA en bibliotecas",
         speaker:
           "Celso Gonzáles · Yuneli Cuevas Ríos · Elizabeth Huisa · Karen Jara · Henry Chávez",
-        institution: "UNMSM · Universidad de Concepción (Chile) · CBP",
+        institution: "USMP · UNMSM · Universidad de Concepción (Chile) · CBP",
       },
     ],
   },
@@ -196,7 +204,7 @@ const days: Day[] = [
         title:
           "Hacia una ciencia abierta en el Perú: contribución a la Consulta Global 2026 de la UNESCO",
         speaker: "Dr. José Ignacio López Ramírez Gastón",
-        institution: "Open Science Community — Perú",
+        institution: "Open Science Community Perú",
       },
       { time: "10:10 – 10:40", title: "Coffee break", break: true },
       {
@@ -263,9 +271,9 @@ const days: Day[] = [
       {
         time: "17:00 – 17:30",
         kind: "Conferencia 16",
-        title: "Open Access para docencia e investigación",
+        title: "Prácticas de ciencia abierta en bibliotecas académicas",
         speaker: "Julio Santillán",
-        institution: "Colectivo Open Access Perú",
+        institution: "Open Science Community Perú",
       },
       {
         time: "17:35 – 18:05",
@@ -281,7 +289,7 @@ const days: Day[] = [
         title: "Open Access para docencia e investigación",
         speaker: "Dr. José Ignacio López Ramírez Gastón · Dr. Julio Santillán · Humberto Ravest",
         institution:
-          "Open Science Community Perú · Colectivo Open Access Perú · Consultor en Gestión del Conocimiento (Chile/Perú)",
+          "Open Science Community Perú · Open Access Perú · Consultor en Gestión del Conocimiento (Chile/Perú)",
       },
     ],
   },
@@ -294,15 +302,15 @@ const days: Day[] = [
       {
         time: "08:30 – 09:30",
         kind: "Charla magistral 3",
-        title: "Inteligencia artificial",
-        speaker: "Experto invitado — EE. UU.",
+        title: "Respuestas seguras no son respuestas verdaderas: alfabetización crítica en la era de la IA generativa",
+        speaker: "Santiago Villegas-Ceballos",
         institution: "eLibro",
       },
       {
         time: "09:35 – 10:05",
         kind: "Conferencia 18",
         title:
-          "Transformación del CRAI+I y ecosistemas Maker en las ciencias administrativas: innovación, IA y aprendizaje inmersivo en la educación superior",
+          "Transformación del CRAI+I y Ecosistemas Maker en las Ciencias Administrativas: Innovación, Inteligencia Artificial y Aprendizaje Inmersivo en la Educación Superior",
         speaker: "Angela Clemencia Serna · Huber Gómez",
         institution: "CEIPA · Support Pro Consulting — Colombia",
       },
@@ -326,13 +334,13 @@ const days: Day[] = [
       {
         time: "11:50 – 12:20",
         kind: "Conferencia 21",
-        title: "Título por confirmar",
+        title: "Herramienta para el acompañamiento académico y crecimiento",
         speaker: "Raúl Manco",
         institution: "eLibro",
       },
       { time: "12:30 – 13:00", title: "Coffee break", break: true },
-      { time: "13:10 – 13:40", kind: "Clausura oficial", title: "Ceremonia de clausura" },
-      { time: "13:50 – 14:20", kind: "Evento cultural", title: "Presentación cultural" },
+      { time: "13:10 – 13:40", kind: "Clausura oficial", title: "Clausura oficial" },
+      { time: "13:50 – 14:20", kind: "Evento cultural", title: "Evento cultural" },
     ],
   },
   {
