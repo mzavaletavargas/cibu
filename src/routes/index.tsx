@@ -244,7 +244,7 @@ const expositores: Expositor[] = [
     photo: fotoCelsoGonzales,
     bio: [
       "Magíster en Dirección de Tecnología de Información y Comunicaciones por la Universidad Politécnica de Cataluña (España) y la Universidad Peruana de Ciencias Aplicadas (Perú). Estudios de postgrado en Ingeniería de Software en la PUCP y Marketing Digital en la Universidad del Pacífico. Docente en la Universidad Nacional Mayor de San Marcos y licenciado de Ciencias de la Información por la PUCP.",
-      "Actualmente labora como jefe de la Biblioteca de la Facultad de Comunicaciones, Turismo y Psicología de la Universidad de San Martín de Porres – Campus Surquillo. Ha sido subdirector corporativo del Área de Tecnología de Información y Comunicaciones de la Universidad Científica del Sur, Universidad SISE e Instituto SISE, y webmaster en la Universidad del Pacífico y la UPC. Participó en programas de entrenamiento en la Universidad de Illinois (EE. UU.) y en desarrollo de bibliotecas digitales en la Universidad de Ceará (Brasil).",
+      "Actualmente labora como jefe de la Biblioteca de la Facultad de Comunicaciones, Turismo y Psicología de la Universidad de San Martín de Porres - Campus Surquillo. Ha sido subdirector corporativo del Área de Tecnología de Información y Comunicaciones de la Universidad Científica del Sur, Universidad SISE e Instituto SISE, y webmaster en la Universidad del Pacífico y la UPC. Participó en programas de entrenamiento en la Universidad de Illinois (EE. UU.) y en desarrollo de bibliotecas digitales en la Universidad de Ceará (Brasil).",
     ],
   },
   {
@@ -407,7 +407,7 @@ const expositores: Expositor[] = [
     bio: [
       “Licenciado en Bibliotecología y Ciencias de la Información. Con Maestría en Docencia en Educación Superior y Comunicación Social, con perfil orientado a la aplicación de tecnologías de la información y comunicación (TICs) para bibliotecas, con énfasis en gestión de bibliotecas especializadas.”,
       “Docente Asociado en la Universidad Nacional Mayor de San Marcos, Facultad de Letras y Ciencias Humanas, Especialidad Bibliotecología. Cuenta con experiencia en acreditación de bibliotecas y certificación de personal en la especialidad.”,
-      “Decano del Colegio de Bibliotecólogos del Perú para el período 2025–2026.”,
+      “Decano del Colegio de Bibliotecólogos del Perú para el período 2025-2026.”,
     ],
   },
 ];
@@ -447,7 +447,7 @@ function Index() {
         <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-28 md:pt-32 md:pb-36 text-white">
           <div className="lg:max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 backdrop-blur text-xs uppercase tracking-widest mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" /> 13–16 julio · Trujillo,
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" /> 13-16 julio · Trujillo,
               Perú
             </div>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.05]">
