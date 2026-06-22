@@ -52,7 +52,6 @@ import fotoOscarPilco from "@/assets/ponentes/oscar-pilco.jpeg";
 import fotoVaniaNamuche from "@/assets/ponentes/vania-namuche.jpeg";
 import fotoRocioAponte from "@/assets/ponentes/rocio-aponte.jpg";
 import fotoValerynNamuche from "@/assets/ponentes/valeryn-namuche.jpg";
-import fotoBernardoRojas from "@/assets/ponentes/bernardo-rojas.jpg";
 import {
   Sparkles,
   Network,
@@ -209,7 +208,7 @@ const expositores: Expositor[] = [
     name: "Bernardo Rojas",
     institution: "Universidad de O'Higgins",
     country: "Chile",
-    photo: fotoBernardoRojas,
+    photo: "https://res.cloudinary.com/dtioir2dl/image/upload/v1782149112/Screenshot_From_2026-06-22_13-20-04_qonwc4.png",
     bio: [
       "Bibliotecólogo y Licenciado en Ciencias de la Documentación por la Universidad de Playa Ancha, con diplomado en Diseño de Servicios por la Universidad del Desarrollo. Actualmente se desempeña como Jefe de la Unidad de Bibliotecas de la Universidad de O'Higgins, donde lidera procesos de gestión, innovación y fortalecimiento de los servicios de información en el ámbito de la educación superior.",
       "Cuenta con una sólida trayectoria en la implementación de proyectos vinculados a tecnologías de la información, destacando su participación en equipos multidisciplinarios orientados al desarrollo de servicios bibliotecarios.",
