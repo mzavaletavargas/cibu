@@ -206,14 +206,14 @@ function Registro() {
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                   Por taller individual - Perú (con DNI o RUC)
                 </div>
-                <div className="font-display text-3xl text-[var(--gold)]">S/ 30.00</div>
+                <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
                 <div className="text-xs text-muted-foreground mt-1">+ IGV (por cada taller)</div>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                   Por taller individual - Extranjero
                 </div>
-                <div className="font-display text-3xl text-[var(--gold)]">USD 10.00</div>
+                <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
                 <div className="text-xs text-muted-foreground mt-1">(por cada taller)</div>
               </div>
             </div>
