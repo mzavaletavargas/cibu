@@ -204,29 +204,16 @@ function Registro() {
             <div className="space-y-4 mb-6">
               <div className="pb-4 border-b border-border">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                  Paquete completo (5 talleres) - Perú (con DNI o RUC)
-                </div>
-                <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
-                <div className="text-xs text-muted-foreground mt-1">+ IGV</div>
-              </div>
-              <div className="pb-4 border-b border-border">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                   Por taller individual - Perú (con DNI o RUC)
                 </div>
-                <div className="font-display text-2xl text-[var(--gold)]">S/ 30.00</div>
+                <div className="font-display text-3xl text-[var(--gold)]">S/ 30.00</div>
                 <div className="text-xs text-muted-foreground mt-1">+ IGV (por cada taller)</div>
-              </div>
-              <div className="pb-4 border-b border-border">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                  Paquete completo - Extranjero
-                </div>
-                <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                   Por taller individual - Extranjero
                 </div>
-                <div className="font-display text-2xl text-[var(--gold)]">USD 10.00</div>
+                <div className="font-display text-3xl text-[var(--gold)]">USD 10.00</div>
                 <div className="text-xs text-muted-foreground mt-1">(por cada taller)</div>
               </div>
             </div>
