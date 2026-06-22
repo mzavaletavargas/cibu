@@ -332,7 +332,7 @@ const expositores: Expositor[] = [
     photo: fotoValerynNamuche,
     bio: [
       “Socióloga y gestora cultural peruana, actualmente estudiante de la Maestría en Política Social con mención en Gestión de Proyectos Sociales en la UNMSM. Es directora de Anomiart, espacio dedicado a la gestión cultural, la formulación de proyectos socioculturales, la investigación aplicada y el fortalecimiento de capacidades para agentes culturales.”,
-      “Cuenta con experiencia en mediación lectora, recuperación editorial, monitoreo de proyectos y diseño de iniciativas culturales con enfoque social. Ha participado en proyectos ganadores de fondos del Ministerio de Cultura, entre ellos “Culturalia” (Estímulos Económicos para la Cultura 2025).”,
+      “Cuenta con experiencia en mediación lectora, recuperación editorial, monitoreo de proyectos y diseño de iniciativas culturales con enfoque social. Ha participado en proyectos ganadores de fondos del Ministerio de Cultura, entre ellos \”Culturalia\” (Estímulos Económicos para la Cultura 2025).”,
     ],
   },
   {
