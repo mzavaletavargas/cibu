@@ -198,22 +198,36 @@ function Registro() {
           </div>
 
           {/* Talleres */}
-          <div className="bg-card border border-border rounded-2xl p-8 hover:border-[var(--gold)] transition">
+          <div className="bg-card border border-[var(--gold)] rounded-2xl p-8 hover:border-[var(--gold)] transition">
             <h3 className="font-display text-2xl mb-2">Talleres</h3>
             <p className="text-sm text-muted-foreground mb-6">13 de julio de 2026</p>
             <div className="space-y-4 mb-6">
               <div className="pb-4 border-b border-border">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                  Perú (con DNI o RUC)
+                  Paquete completo (5 talleres) - Perú (con DNI o RUC)
                 </div>
                 <div className="font-display text-3xl text-[var(--gold)]">S/ 100.00</div>
                 <div className="text-xs text-muted-foreground mt-1">+ IGV</div>
               </div>
-              <div>
+              <div className="pb-4 border-b border-border">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                  Extranjero
+                  Por taller individual - Perú (con DNI o RUC)
+                </div>
+                <div className="font-display text-2xl text-[var(--gold)]">S/ 30.00</div>
+                <div className="text-xs text-muted-foreground mt-1">+ IGV (por cada taller)</div>
+              </div>
+              <div className="pb-4 border-b border-border">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                  Paquete completo - Extranjero
                 </div>
                 <div className="font-display text-3xl text-[var(--gold)]">USD 30.00</div>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                  Por taller individual - Extranjero
+                </div>
+                <div className="font-display text-2xl text-[var(--gold)]">USD 10.00</div>
+                <div className="text-xs text-muted-foreground mt-1">(por cada taller)</div>
               </div>
             </div>
             <div className="border-t border-border pt-4">
@@ -223,7 +237,7 @@ function Registro() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--gold)] mt-0.5">•</span>
-                  <span>Material para apuntes</span>
+                  <span>Material para apuntes (cupos limitados)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--gold)] mt-0.5">•</span>
@@ -337,7 +351,10 @@ function Registro() {
         <div className="mt-12 text-center text-muted-foreground">
           <p>
             ¿Tienes preguntas? Escríbenos por WhatsApp al{" "}
-            <strong className="text-foreground">+51 957 555 418</strong> o al correo{" "}
+            <a href="https://wa.me/51986160732" target="_blank" rel="noreferrer" className="underline text-foreground font-semibold hover:text-[var(--gold)]">
+              +51 986 160 732
+            </a>{" "}
+            o al correo{" "}
             <a href="mailto:cibu.bibliotecas@gmail.com" className="underline">
               cibu.bibliotecas@gmail.com
             </a>
