@@ -480,6 +480,81 @@ function ProgramaPage() {
         ))}
       </section>
 
+      {/* INFORMACIÓN GENERAL */}
+      <section className="bg-secondary/40 py-24 border-y border-border">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="text-xs uppercase tracking-[0.25em] text-[var(--gold)] font-semibold mb-4">
+              Información general
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl">Hospedaje y ubicación.</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Hotel Info */}
+            <div className="bg-card border border-border rounded-2xl p-8" style={{ boxShadow: "var(--shadow-elegant)" }}>
+              <h3 className="font-display text-2xl mb-6">Hausen Hotel</h3>
+              <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+                <p>
+                  Hotel con <strong className="text-foreground">convenio de tarifa preferencial</strong> para los asistentes al VIII Congreso Internacional de Bibliotecas Universitarias.
+                </p>
+                <div className="pt-4 border-t border-border">
+                  <div className="font-semibold text-foreground mb-2">Ubicación:</div>
+                  <p>Prolongación Cesar Vallejo MZ E lote 27, Urb. Ingeniería, Trujillo</p>
+                  <p className="text-xs mt-2">
+                    <strong>Referencia:</strong> A 2 cuadras del Real Plaza. Frente al teatro de la Universidad UPAO.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-border">
+                  <div className="font-semibold text-foreground mb-3">Contacto:</div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold">Correo:</span>
+                      <a href="mailto:Hausenhotel@gmail.com" className="text-[var(--gold)] hover:underline">
+                        Hausenhotel@gmail.com
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold">Tel:</span>
+                      <a href="tel:+51044727265" className="text-[var(--gold)] hover:underline">
+                        +51 (044) 727265
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold">Celular:</span>
+                      <a href="tel:+51993152441" className="text-[var(--gold)] hover:underline">
+                        +51 993152441
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold">Facebook:</span>
+                      <a href="https://www.facebook.com/Hausenhotel" target="_blank" rel="noreferrer" className="text-[var(--gold)] hover:underline">
+                        www.facebook.com/Hausenhotel
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-border text-xs">
+                  <p className="italic text-muted-foreground">
+                    Informar la calidad de asistente o invitado al momento de registrar el ingreso.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div>
+              <img
+                src="https://res.cloudinary.com/dtioir2dl/image/upload/v1782149668/Screenshot_From_2026-06-22_13-34-17_jptzoo.png"
+                alt="Ubicación de Hausen Hotel en Trujillo"
+                className="w-full rounded-2xl border border-border"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="max-w-4xl mx-auto px-6 pb-24 text-center">
         <p className="text-muted-foreground mb-6">
