@@ -100,12 +100,6 @@ const days: Day[] = [
     rows: [
       { time: "08:00 – 08:30", kind: "Acreditación", title: "Entrega de credenciales" },
       {
-        time: "08:30 – 09:00",
-        kind: "Inauguración",
-        title: "Palabras de bienvenida",
-        institution: "Autoridades de la institución y del congreso",
-      },
-      {
         time: "08:30 – 09:30",
         kind: "Charla magistral 1",
         title: "Investigación y bibliotecas",
