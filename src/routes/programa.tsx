@@ -100,12 +100,6 @@ const days: Day[] = [
     rows: [
       { time: "08:00 – 08:30", kind: "Acreditación", title: "Entrega de credenciales" },
       {
-        time: "08:30 – 09:00",
-        kind: "Inauguración",
-        title: "Palabras de bienvenida",
-        institution: "Autoridades de la institución y del congreso",
-      },
-      {
         time: "08:30 – 09:30",
         kind: "Charla magistral 1",
         title: "Investigación y bibliotecas",
@@ -132,8 +126,7 @@ const days: Day[] = [
       {
         time: "11:45 – 12:15",
         kind: "Conferencia 3",
-        title:
-          "Repositorio institucional en UESAN: experiencias en la difusión de la investigación científica y académica",
+        title: "Uso de los datos de Repositorio institucional: experiencia UESAN",
         speaker: "Cecilia Alegre",
         institution: "ESAN CENDOC",
       },
@@ -155,9 +148,9 @@ const days: Day[] = [
       {
         time: "15:10 – 15:45",
         kind: "Conferencia 6",
-        title: "Importancia de las bibliotecas + IA en el desarrollo académico de los usuarios",
+        title: "Las bibliotecas universitarias en la era de la inteligencia artificial",
         speaker: "Vania Namuche Zavaleta",
-        institution: "UNMSM",
+        institution: "Universidad Nacional Mayor de San Marcos",
       },
       { time: "16:00 – 16:30", title: "Coffee break", break: true },
       {
