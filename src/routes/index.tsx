@@ -392,7 +392,7 @@ const expositores: Expositor[] = [
     name: "Santiago Villegas-Ceballos",
     institution: "eLibro",
     country: "Colombia",
-    photo: "https://res.cloudinary.com/dtioir2dl/image/upload/v1782149484/Screenshot_From_2026-06-22_13-30-39_bxlmhx.png",
+    photo: "https://res.cloudinary.com/dtioir2dl/image/upload/v1782149483/Screenshot_From_2026-06-22_13-30-56_e3dra6.png",
     bio: [
       "Bibliotecario 4.0 colombiano dedicado, desde hace más de dos décadas, a la transformación digital de las instituciones culturales. Lidera la Unidad de Innovación e Inteligencia Artificial de eLibro y codirige IAparaBibliotecas.com.",
       "Miembro electo del Comité Permanente de la Sección de Tecnologías de la Información de la IFLA. Conferencista internacional en España, Argentina, Chile, Ecuador, Sudáfrica y Macao.",
