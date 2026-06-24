@@ -148,9 +148,9 @@ const days: Day[] = [
       {
         time: "15:10 – 15:45",
         kind: "Conferencia 6",
-        title: "Importancia de las bibliotecas + IA en el desarrollo académico de los usuarios",
+        title: "Las bibliotecas universitarias en la era de la inteligencia artificial",
         speaker: "Vania Namuche Zavaleta",
-        institution: "UNMSM",
+        institution: "Universidad Nacional Mayor de San Marcos",
       },
       { time: "16:00 – 16:30", title: "Coffee break", break: true },
       {
