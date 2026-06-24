@@ -126,8 +126,7 @@ const days: Day[] = [
       {
         time: "11:45 – 12:15",
         kind: "Conferencia 3",
-        title:
-          "Repositorio institucional en UESAN: experiencias en la difusión de la investigación científica y académica",
+        title: "Uso de los datos de Repositorio institucional: experiencia UESAN",
         speaker: "Cecilia Alegre",
         institution: "ESAN CENDOC",
       },
