@@ -20,7 +20,6 @@ const bannerSrcSet = [400, 800, 1200, 1600, 2000]
 import logoLibun from "@/assets/sponsors/libun.png";
 import logoMcGraw from "@/assets/sponsors/mcgrawhill.png";
 import logoCbp from "@/assets/sponsors/cbp.png";
-import logoSociologos from "@/assets/sponsors/sociologos.png";
 import logoSanMarcos from "@/assets/sponsors/sanmarcos-unmsm.png";
 import logoDigitalContent from "@/assets/sponsors/digital-content.png";
 import logoElibro from "@/assets/sponsors/elibro.png";
@@ -125,7 +124,6 @@ const sponsors = [
   { name: "Escuela de Bibliotecología — UNMSM", logo: logoSanMarcos, dark: false },
   { name: "Colectivo Open Access Perú", logo: logoOpenAccess, dark: false },
   { name: "Open Science Community Perú", logo: logoOscp, dark: false },
-  { name: "Colegio de Sociólogos del Perú", logo: logoSociologos, dark: false },
   { name: "Fondo Editorial de la UPAO", logo: logoFondoUpao, dark: false },
   { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
 ];
