@@ -274,6 +274,18 @@ const expositores: Expositor[] = [
     ],
   },
   {
+    name: "Alan Cáceres",
+    institution: "Registro Nacional de Trabajos de Investigación (RENATI)",
+    country: "Perú",
+    photo:
+      "https://res.cloudinary.com/dtioir2dl/image/upload/v1782950943/ddf59688-b2d5-4aab-9333-15b6a949d772.png",
+    bio: [
+      "Licenciado en Bibliotecología y Ciencias de la Información por la Universidad Nacional Mayor de San Marcos. Egresado de la Maestría en Gestión e Innovación de la Educación Superior de la Universidad Católica Sedes Sapientiae. Cuenta con más de veinte años de experiencia profesional en gestión de la información, bibliotecas universitarias, repositorios digitales, gestión documental, comunicación científica e investigación en educación superior.",
+      "Actualmente se desempeña como Especialista Administrativo en la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU), donde participa en el análisis y seguimiento de la producción científica del sistema universitario peruano, la gestión del Repositorio Digital RENATI y el desarrollo de iniciativas vinculadas a los sistemas de información para la investigación. Posee amplia experiencia en la implementación y administración de repositorios institucionales, sistemas integrados de gestión bibliotecaria (KOHA), plataformas de revistas científicas (OJS) y estrategias de interoperabilidad de metadatos y acceso abierto.",
+      "Ha liderado proyectos de modernización e innovación tecnológica en instituciones de educación superior y organismos públicos, brindando asesoría especializada en gestión del conocimiento, bibliometría, visibilidad científica, preservación digital y fortalecimiento de capacidades para la investigación.",
+    ],
+  },
+  {
     name: "Marlene Benavides",
     institution: "Fundación del Libro Universitario — LIBUN",
     country: "Perú",
