@@ -109,19 +109,6 @@ export function SiteFooter() {
             </a>
             .
           </div>
-          <div className="opacity-70">
-            Con el apoyo de{" "}
-            <a
-              href="https://www.localy.lat"
-              target="_blank"
-              rel="noopener"
-              title="Localy — espacios para eventos"
-              className="hover:opacity-100 hover:text-[var(--gold)] transition"
-            >
-              Localy
-            </a>{" "}
-            — espacios para eventos.
-          </div>
         </div>
       </div>
     </footer>

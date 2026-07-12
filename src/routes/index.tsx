@@ -31,7 +31,7 @@ import logoOpenAccess from "@/assets/sponsors/open-access-peru.png";
 import logoOscp from "@/assets/sponsors/oscp.png";
 import logoUpao from "@/assets/sponsors/upao.png";
 import logoFondoUpao from "@/assets/sponsors/fondo-editorial-upao.png";
-import logoLocaly from "@/assets/sponsors/localy.svg";
+import logoIntelego from "@/assets/sponsors/intelego.png";
 import fotoAngelaSerna from "@/assets/ponentes/angela-serna.jpeg";
 import fotoHuberGomez from "@/assets/ponentes/huber-gomez.jpeg";
 import fotoJairoDiaz from "@/assets/ponentes/jairo-diaz.png";
@@ -125,7 +125,7 @@ const sponsors = [
   { name: "Colectivo Open Access Perú", logo: logoOpenAccess, dark: false },
   { name: "Open Science Community Perú", logo: logoOscp, dark: false },
   { name: "Fondo Editorial de la UPAO", logo: logoFondoUpao, dark: false },
-  { name: "Localy", logo: logoLocaly, dark: false, href: "https://www.localy.lat" },
+  { name: "Intelego", logo: logoIntelego, dark: false },
 ];
 
 type Expositor = {
